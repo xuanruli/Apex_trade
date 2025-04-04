@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Report | Get Your Analysis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='recomendation.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <div class="navbar-brand">
+        <img src="/api/placeholder/120/35" alt="Logo" />
+      </div>
+      <div class="navbar-menu">
+        <span>Dashboard</span>
+        <span>Portfolio</span>
+        <span>Analysis</span>
+        <span>Reports</span>
+        <span>Settings</span>
+      </div>
+      <div class="search-container">
+        <form class="search-form">
+          <input type="text" class="search-input" placeholder="Search..." />
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="navbar-buttons">
+      <button class="btn-login">Log In</button>
+      <button class="btn-signup">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- Report Container -->
+  <div class="report-container">
+    <div class="report-header">
+      <h1>Portfolio Reports & Analytics</h1>
+      <p>Configure your portfolio reports and have them delivered directly to your inbox on your preferred schedule.</p>
+    </div>
+
+    <div class="report-options">
+      <div class="option-card" onclick="this.classList.toggle('selected')">
+        <div class="option-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="option-title">Performance Report</div>
+        <div class="option-desc">Detailed analysis of your portfolio's performance over time.</div>
+      </div>
+
+      <div class="option-card" onclick="this.classList.toggle('selected')">
+        <div class="option-icon"><i class="fas fa-chart-pie"></i></div>
+        <div class="option-title">Allocation Summary</div>
+        <div class="option-desc">Breakdown of asset allocation and diversification metrics.</div>
+      </div>
+
+      <div class="option-card" onclick="this.classList.toggle('selected')">
+        <div class="option-icon"><i class="fas fa-balance-scale"></i></div>
+        <div class="option-title">Risk Assessment</div>
+        <div class="option-desc">Analysis of portfolio risk factors and volatility metrics.</div>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <h3>Report Configuration</h3>
+      <form class="report-form">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="youremail@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label>Report Frequency</label>
+          <div class="frequency-selector">
+            <div class="frequency-button" onclick="setActive(this)">Daily</div>
+            <div class="frequency-button active" onclick="setActive(this)">Weekly</div>
+            <div class="frequency-button" onclick="setActive(this)">Monthly</div>
+            <div class="frequency-button" onclick="setActive(this)">Quarterly</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Report Format</label>
+          <div class="checkbox-group">
+            <input type="checkbox" id="pdf" checked />
+            <label for="pdf">PDF Document</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="excel" />
+            <label for="excel">Excel Spreadsheet</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="csv" />
+            <label for="csv">CSV Data File</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes (Optional)</label>
+          <textarea id="notes" class="form-control" rows="3" placeholder="Any specific data or metrics you're interested in..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">
+          <i class="fas fa-paper-plane"></i> Schedule My Reports
+        </button>
+
+        <div class="privacy-note">
+          <p>We respect your privacy. Your email will only be used to deliver your requested reports.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 Portfolio Analyzer. All rights reserved.</p>
+  </div>
+
+  <script>
+    function setActive(element) {
+      const buttons = document.querySelectorAll(".frequency-button");
+      buttons.forEach(button => button.classList.remove("active"));
+      element.classList.add("active");
+    }
+  </script>
+</body>
+</html>

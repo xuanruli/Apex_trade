@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #5271FF;
+    --dark-blue: #001F3F;
+    --light-blue: #A4C8E1;
+    --bg-light: #F8FAFC;
+    --text-dark: #333333;
+    --text-muted: #6B7280;
+}
+
+/* Inherit most styles from previous CSS */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding-top: 70px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Existing navbar, card, and other styles remain the same as portfolio.css */
+
+/* New styles for optimization page */
+.optimization-form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(82, 113, 255, 0.2);
+}
+
+.optimization-results {
+    padding: 20px;
+}
+
+.result-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+}
+
+.result-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.result-value {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.optimization-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    border-top: 1px solid #f1f1f1;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 992px) {
+    /* Inherit responsive styles from portfolio.css */
+    .result-summary {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

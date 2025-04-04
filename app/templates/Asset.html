@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ stock.Name }} - Stock Info</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='asset.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='Logo1.png') }}" alt="Echelon Logo">
+            </a>
+            <div class="navbar-menu">
+                <a href="{{ url_for('api.asset') }}">Assets</a>
+                <a href="{{ url_for('api.portfolio') }}">Portfolio</a>
+                <a href="{{ url_for('api.news') }}">News</a>
+                <a href="/about">About Us</a>
+            </div>
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="search" placeholder="Search symbol or site..." class="search-input">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="navbar-buttons">
+            <button class="btn-login">Login</button>
+            <button class="btn-signup">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="top-info">
+            <div>
+                <h1 id="stockSymbol" data-symbol="{{ stock.Symbol }}">{{ stock.Name }} <span class="h4 text-muted">({{ stock.Symbol }})</span></h1>
+                <p class="exchange">{{ stock.Exchange }}</p>
+            </div>
+            <div class="stock-details">
+                <p class="price">${{ stock.Price }}</p>
+                <p class="high-low">
+                    <i class="fas fa-arrow-up text-success"></i> High: ${{ stock.WeekHigh }} 
+                    <i class="fas fa-arrow-down text-danger ms-3"></i> Low: ${{ stock.WeekLow }}
+                </p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <!-- Candlestick Chart -->
+            <div id="candlestickChart">{{ candlestick_chart | safe }}</div>
+            
+            <!-- Line Chart -->
+            <div id="lineChart">{{ line_chart | safe }}</div>
+            
+            <!-- Bar Chart -->
+            <div id="barChart">{{ bar_chart | safe }}</div>
+        </div>
+        
+        <div class="news-container">
+            <h3>Recent News</h3>
+            <ul id="news-list" class="list-group">
+                <li class="list-group-item">Apple announces new AI features coming to iOS</li>
+                <li class="list-group-item">Analysts raise price target for {{ stock.Symbol }} following strong earnings</li>
+                <li class="list-group-item">Apple Vision Pro sales exceed expectations</li>
+            </ul>
+        </div>
+
+        <div class="metrics-container">
+            <h3>Financial Metrics</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover metrics-table">
+                    <thead class="table-header">
+                        <tr>
+                            <th>Metric</th>
+                            <th>Value</th>
+                            <th>Metric</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sector</td>
+                            <td>{{ stock.Sector }}</td>
+                            <td>Industry</td>
+                            <td>{{ stock.Industry }}</td>
+                        </tr>
+                        <tr>
+                            <td>Market Cap</td>
+                            <td>${{ stock.MarketCap }}</td>
+                            <td>P/E Ratio</td>
+                            <td>{{ stock.PERatio }}</td>
+                        </tr>
+                        <tr>
+                            <td>Earnings Per Share</td>
+                            <td>${{ stock.EPS }}</td>
+                            <td>Dividend</td>
+                            <td>${{ stock.Dividend }} ({{ stock.DividendYield }}%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2025 Stock Trading Platform. All Rights Reserved.
+    </footer>
+</body>
+</html>

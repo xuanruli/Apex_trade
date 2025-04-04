@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - Stock Info</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='historical.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='Logo1.png') }}" alt="Echelon Logo">
+            </a>
+            <div class="navbar-menu">
+                <span>Assets</span>
+                <span>Portfolio</span>
+                <span>News</span>
+                <span>About Us</span>
+                <span>Learn More</span>
+            </div>
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="search" placeholder="Search symbol or site..." class="search-input">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="navbar-buttons">
+            <button class="btn-login">Login</button>
+            <button class="btn-signup">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="header-container">
+            <div>
+                <h1>Transaction History</h1>
+                <p class="text-muted">Track all your historical buy and sell transactions</p>
+            </div>
+            <div class="header-details">
+                <p class="h4">Total Transactions: <span class="text-primary">42</span></p>
+            </div>
+        </div>
+
+        <div class="summary-container">
+            <div class="summary-card">
+                <h4>Total Buy Volume</h4>
+                <p>$78,530.45</p>
+            </div>
+            <div class="summary-card">
+                <h4>Total Sell Volume</h4>
+                <p>$85,932.18</p>
+            </div>
+            <div class="summary-card">
+                <h4>Net Profit/Loss</h4>
+                <p class="profit-gain">+$7,401.73</p>
+            </div>
+            <div class="summary-card">
+                <h4>Average Return</h4>
+                <p class="profit-gain">+9.42%</p>
+            </div>
+        </div>
+
+        <div class="transaction-filter">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Buy Only</button>
+            <button class="filter-btn">Sell Only</button>
+            <button class="filter-btn">Last 30 Days</button>
+            <button class="filter-btn">Last 90 Days</button>
+            <button class="filter-btn">This Year</button>
+        </div>
+
+        <div class="transaction-container">
+            <h3>Transaction Records</h3>
+            <div class="table-responsive">
+                <table class="table table-hover transaction-table">
+                    <thead class="table-header">
+                        <tr>
+                            <th>Date</th>
+                            <th>Symbol</th>
+                            <th>Type</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Return</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mar 10, 2025</td>
+                            <td>AAPL</td>
+                            <td><span class="transaction-badge badge-sell">SELL</span></td>
+                            <td>15</td>
+                            <td>$215.35</td>
+                            <td class="transaction-sell">$3,230.25</td>
+                            <td class="profit-gain">+12.5%</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 5, 2025</td>
+                            <td>NVDA</td>
+                            <td><span class="transaction-badge badge-buy">BUY</span></td>
+                            <td>8</td>
+                            <td>$543.65</td>
+                            <td class="transaction-buy">$4,349.20</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Feb 28, 2025</td>
+                            <td>Feb 28, 2025</td>
+                            <td>MSFT</td>
+                            <td><span class="transaction-badge badge-sell">SELL</span></td>
+                            <td>20</td>
+                            <td>$425.18</td>
+                            <td class="transaction-sell">$8,503.60</td>
+                            <td class="profit-gain">+15.3%</td>
+                        </tr>
+                        <tr>
+                            <td>Feb 22, 2025</td>
+                            <td>TSLA</td>
+                            <td><span class="transaction-badge badge-buy">BUY</span></td>
+                            <td>10</td>
+                            <td>$312.45</td>
+                            <td class="transaction-buy">$3,124.50</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Feb 15, 2025</td>
+                            <td>AMZN</td>
+                            <td><span class="transaction-badge badge-sell">SELL</span></td>
+                            <td>5</td>
+                            <td>$187.32</td>
+                            <td class="transaction-sell">$936.60</td>
+                            <td class="profit-gain">+8.7%</td>
+                        </tr>
+                        <tr>
+                            <td>Feb 10, 2025</td>
+                            <td>GOOGL</td>
+                            <td><span class="transaction-badge badge-buy">BUY</span></td>
+                            <td>12</td>
+                            <td>$172.68</td>
+                            <td class="transaction-buy">$2,072.16</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Feb 3, 2025</td>
+                            <td>META</td>
+                            <td><span class="transaction-badge badge-sell">SELL</span></td>
+                            <td>25</td>
+                            <td>$485.20</td>
+                            <td class="transaction-sell">$12,130.00</td>
+                            <td class="profit-gain">+22.1%</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 28, 2025</td>
+                            <td>NFLX</td>
+                            <td><span class="transaction-badge badge-buy">BUY</span></td>
+                            <td>8</td>
+                            <td>$628.35</td>
+                            <td class="transaction-buy">$5,026.80</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 22, 2025</td>
+                            <td>AAPL</td>
+                            <td><span class="transaction-badge badge-buy">BUY</span></td>
+                            <td>15</td>
+                            <td>$191.40</td>
+                            <td class="transaction-buy">$2,871.00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 15, 2025</td>
+                            <td>AMD</td>
+                            <td><span class="transaction-badge badge-sell">SELL</span></td>
+                            <td>30</td>
+                            <td>$158.75</td>
+                            <td class="transaction-sell">$4,762.50</td>
+                            <td class="profit-loss">-4.2%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination-container">
+                <button class="pagination-button">Previous</button>
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">3</button>
+                <button class="pagination-button">4</button>
+                <button class="pagination-button">5</button>
+                <button class="pagination-button">Next</button>
+            </div>
+        </div>
+
+        <div class="transaction-container">
+            <h3>Transaction Analytics</h3>
+            <canvas id="transactionChart" height="300"></canvas>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2025 Stock Trading Platform. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                // Here you would typically filter the transactions based on the selected filter
+            });
+        });
+
+        // Initialize transaction chart
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('transactionChart').getContext('2d');
+            
+            const transactionData = {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [
+                    {
+                        label: 'Buy Volume',
+                        backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                        borderColor: 'rgba(34, 197, 94, 1)',
+                        borderWidth: 2,
+                        data: [12500, 9800, 15600, 8200, 11000, 14300]
+                    },
+                    {
+                        label: 'Sell Volume',
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        borderWidth: 2,
+                        data: [8000, 14500, 10200, 12800, 9300, 16200]
+                    }
+                ]
+            };
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: transactionData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Monthly Transaction Volume'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Volume ($)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Month'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
