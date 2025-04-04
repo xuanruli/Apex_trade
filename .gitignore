@@ -3,4 +3,5 @@ __pycache__/
 *.py[cod]
 *.ipynb
 venv/
-*DS_Store
+*DS_Store.env
+app/db/apex_data.db
