@@ -13,7 +13,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-left">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="{{ url_for('static', filename='Logo1.png') }}" alt="Logo" />
       </a>
       <div class="navbar-menu">
@@ -32,37 +32,39 @@
       </div>
     </div>
     <div class="navbar-buttons">
-      <a href="login.html" class="btn-login">Login</a>
-      <a href="signup.html" class="btn-signup">Sign Up</a>
-    </div>
+            {% if session.get('id') %}
+                <span class="welcome-text">{{ session.get('username') }} ｜{{ session.get('name') }} </span>
+                <a href="{{ url_for('api.logout') }}" class="btn-signup">Logout</a>
+            {% else %}
+                <a href="{{ url_for('api.login') }}" class="btn-login">Login</a>
+                <a href="{{ url_for('api.register') }}" class="btn-signup">Sign Up</a>
+            {% endif %}
+        </div>
   </nav>
 
   <!-- News Section -->
   <section class="container">
     <h2 class="text-center mb-5" style="font-weight:600;">📈 Latest Market News</h2>
     <div class="row g-4">
-      <!-- Example News Cards -->
-      <div class="col-md-6 col-lg-4">
-        <div class="news-card">
-          <h5>Stocks Climb as Fed Hints at Rate Pause</h5>
-          <p>Markets surged after the Federal Reserve signaled it may slow down rate hikes.</p>
-          <a href="#" target="_blank">Read more</a>
+      {% for article in articles %}
+        <div class="col-md-6 col-lg-4">
+          <div class="news-card">
+            <!-- Display the article's image -->
+            <img
+              class="news-image"
+              src="{{ article.image_url }}"
+              alt="Article Image"
+            />
+
+            <!-- Title and description -->
+            <h5>{{ article.title }}</h5>
+            <p>{{ article.description }}</p>
+
+            <!-- Link to the full article -->
+            <a href="{{ article.url }}" target="_blank">Read more</a>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="news-card">
-          <h5>Tech Giants Report Earnings This Week</h5>
-          <p>Investors are keeping an eye on Q1 earnings from Apple, Google, and Amazon.</p>
-          <a href="#" target="_blank">Read more</a>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="news-card">
-          <h5>Oil Prices Dip Amid Supply Concerns</h5>
-          <p>Crude oil prices dropped as global production faces disruptions.</p>
-          <a href="#" target="_blank">Read more</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </section>
 

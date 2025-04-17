@@ -1,814 +1,135 @@
-2025-03-08 09:26:11,665 - INFO - [TABLE CREATE] - stock_info
-2025-03-08 09:26:11,665 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-08 09:26:11,665 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-08 09:26:11,665 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-08 09:26:11,666 - INFO - [TABLE CREATE] - user
-2025-03-08 09:26:11,666 - INFO - [TABLE CREATE] - portfolio
-2025-03-08 09:26:11,666 - INFO - [TABLE CREATE] - transactions
-2025-03-08 09:26:12,020 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-08 09:27:15,778 - INFO - [TABLE FINISHED COMMIT] - stock_datadaily
-2025-03-08 09:28:16,405 - INFO - [TABLE FINISHED COMMIT] - stock_datahourly
-2025-03-08 09:29:00,764 - INFO - [TABLE FINISHED COMMIT] - stock_datamonthly
-2025-03-21 19:49:37,264 - INFO - [TABLE CREATE] - stock_info
-2025-03-21 19:49:37,264 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-21 19:49:37,264 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-21 19:49:37,264 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-21 19:49:37,264 - INFO - [TABLE CREATE] - user
-2025-03-21 19:49:37,264 - INFO - [TABLE CREATE] - portfolio
-2025-03-21 19:49:37,264 - INFO - [TABLE CREATE] - transactions
-2025-03-21 19:49:37,805 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-24 18:26:24,451 - INFO - [TABLE CREATE] - stock_info
-2025-03-24 18:26:24,452 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-24 18:26:24,452 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:26:24,452 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:26:24,452 - INFO - [TABLE CREATE] - user
-2025-03-24 18:26:24,452 - INFO - [TABLE CREATE] - portfolio
-2025-03-24 18:26:24,452 - INFO - [TABLE CREATE] - transactions
-2025-03-24 18:26:24,877 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-24 18:32:56,130 - INFO - [TABLE CREATE] - stock_info
-2025-03-24 18:32:56,130 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-24 18:32:56,130 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:32:56,130 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:32:56,130 - INFO - [TABLE CREATE] - user
-2025-03-24 18:32:56,130 - INFO - [TABLE CREATE] - portfolio
-2025-03-24 18:32:56,130 - INFO - [TABLE CREATE] - transactions
-2025-03-24 18:32:56,476 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-24 18:33:38,962 - INFO - [TABLE CREATE] - stock_info
-2025-03-24 18:33:38,962 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-24 18:33:38,962 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:33:38,962 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:33:38,962 - INFO - [TABLE CREATE] - user
-2025-03-24 18:33:38,962 - INFO - [TABLE CREATE] - portfolio
-2025-03-24 18:33:38,962 - INFO - [TABLE CREATE] - transactions
-2025-03-24 18:33:39,298 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-24 18:49:06,954 - INFO - [TABLE CREATE] - stock_info
-2025-03-24 18:49:06,954 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-24 18:49:06,954 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:49:06,954 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:49:06,954 - INFO - [TABLE CREATE] - user
-2025-03-24 18:49:06,954 - INFO - [TABLE CREATE] - portfolio
-2025-03-24 18:49:06,954 - INFO - [TABLE CREATE] - transactions
-2025-03-24 18:49:07,522 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-24 18:50:21,255 - INFO - [TABLE CREATE] - stock_info
-2025-03-24 18:50:21,255 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-24 18:50:21,255 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:50:21,255 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-24 18:50:21,255 - INFO - [TABLE CREATE] - user
-2025-03-24 18:50:21,255 - INFO - [TABLE CREATE] - portfolio
-2025-03-24 18:50:21,255 - INFO - [TABLE CREATE] - transactions
-2025-03-24 18:50:21,546 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-26 01:02:47,942 - INFO - [TABLE CREATE] - stock_info
-2025-03-26 01:02:47,942 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-26 01:02:47,942 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 01:02:47,942 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 01:02:47,942 - INFO - [TABLE CREATE] - user
-2025-03-26 01:02:47,943 - INFO - [TABLE CREATE] - portfolio
-2025-03-26 01:02:47,943 - INFO - [TABLE CREATE] - transactions
-2025-03-26 01:02:48,350 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-26 01:03:53,887 - INFO - [TABLE FINISHED COMMIT] - stock_datadaily
-2025-03-26 01:04:39,218 - INFO - [TABLE FINISHED COMMIT] - stock_datahourly
-2025-03-26 01:05:25,496 - INFO - [TABLE FINISHED COMMIT] - stock_datamonthly
-2025-03-26 01:05:26,289 - INFO - [TABLE CREATE] - stock_info
-2025-03-26 01:05:26,289 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-26 01:05:26,289 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 01:05:26,289 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 01:05:26,289 - INFO - [TABLE CREATE] - user
-2025-03-26 01:05:26,289 - INFO - [TABLE CREATE] - portfolio
-2025-03-26 01:05:26,289 - INFO - [TABLE CREATE] - transactions
-2025-03-26 01:05:26,614 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-26 01:06:32,279 - INFO - [TABLE FINISHED COMMIT] - stock_datadaily
-2025-03-26 01:07:17,516 - INFO - [TABLE FINISHED COMMIT] - stock_datahourly
-2025-03-26 01:08:03,507 - INFO - [TABLE FINISHED COMMIT] - stock_datamonthly
-2025-03-26 01:11:15,963 - INFO - [TABLE CREATE] - stock_info
-2025-03-26 01:11:15,963 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-26 01:11:15,963 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 01:11:15,963 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 01:11:15,963 - INFO - [TABLE CREATE] - user
-2025-03-26 01:11:15,963 - INFO - [TABLE CREATE] - portfolio
-2025-03-26 01:11:15,963 - INFO - [TABLE CREATE] - transactions
-2025-03-26 01:11:16,330 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-26 01:12:19,902 - INFO - [TABLE FINISHED COMMIT] - stock_datadaily
-2025-03-26 01:13:04,932 - INFO - [TABLE FINISHED COMMIT] - stock_datahourly
-2025-03-26 01:13:51,304 - INFO - [TABLE FINISHED COMMIT] - stock_datamonthly
-2025-03-26 01:20:26,753 - INFO - [TABLE CREATE] - stock_info
-2025-03-26 01:20:27,057 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-26 01:20:27,069 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 01:20:27,089 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 01:20:27,090 - INFO - [TABLE CREATE] - user
-2025-03-26 01:20:27,091 - INFO - [TABLE CREATE] - portfolio
-2025-03-26 01:20:27,092 - INFO - [TABLE CREATE] - transactions
-2025-03-26 01:20:27,620 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-26 01:21:30,671 - INFO - [TABLE FINISHED COMMIT] - stock_datadaily
-2025-03-26 01:22:16,548 - INFO - [TABLE FINISHED COMMIT] - stock_datahourly
-2025-03-26 01:23:02,543 - INFO - [TABLE FINISHED COMMIT] - stock_datamonthly
-2025-03-26 01:23:31,302 - INFO - [USER] - new user xuanru li
-2025-03-26 01:28:31,637 - INFO - [USER] - new user xuanru li
-2025-03-26 01:28:31,639 - INFO - [DATABASE] - new user added xuanru li
-2025-03-26 01:31:42,879 - INFO - [USER] - new user xuanru li
-2025-03-26 01:31:42,881 - INFO - [DATABASE] - new user added xuanru li
-2025-03-26 05:12:46,191 - INFO - [TABLE CREATE] - stock_info
-2025-03-26 05:12:46,629 - INFO - [TABLE CREATE] - stock_data_daily
-2025-03-26 05:12:46,637 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 05:12:46,647 - INFO - [TABLE CREATE] - stock_data_monthly
-2025-03-26 05:12:46,648 - INFO - [TABLE CREATE] - user
-2025-03-26 05:12:46,650 - INFO - [TABLE CREATE] - portfolio
-2025-03-26 05:12:46,651 - INFO - [TABLE CREATE] - transactions
-2025-03-26 05:12:47,197 - INFO - [TABLE FINISHED COMMIT] - stock_info
-2025-03-26 05:13:54,573 - INFO - [TABLE FINISHED COMMIT] - stock_datadaily
-2025-03-26 05:14:42,957 - INFO - [TABLE FINISHED COMMIT] - stock_datahourly
-2025-03-26 05:15:43,260 - INFO - [TABLE FINISHED COMMIT] - stock_datamonthly
-2025-03-26 05:41:11,617 - INFO - [USER] - new user ryan29li33
-2025-03-26 05:41:11,620 - INFO - [DATABASE] - new user added ryan29li33
-2025-03-26 05:41:11,621 - INFO - [AUTH] - created new Google user: ryan29li33
-2025-03-26 05:41:14,799 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 05:41:17,077 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 05:43:13,596 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 05:49:38,426 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 05:54:57,847 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 05:55:00,446 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 06:06:21,146 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 06:21:39,053 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 06:25:25,850 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 06:25:54,908 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 06:38:12,275 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 06:39:39,252 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 06:39:55,084 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 06:45:38,798 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 07:03:36,193 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 07:20:38,736 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 07:25:48,666 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 07:48:46,543 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 07:52:03,315 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-26 10:26:31,408 - INFO - [AUTH] - existing Google user: ryan29li33@gmail.com
-2025-03-31 18:10:36,791 - ERROR - Exception on / [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/main_c.py", line 67, in index
-    return redirect(url_for('api.login'))
-                    ~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/helpers.py", line 232, in url_for
-    return current_app.url_for(
-           ~~~~~~~~~~~~~~~~~~~^
-        endpoint,
-        ^^^^^^^^^
-    ...<4 lines>...
-        **values,
-        ^^^^^^^^^
-    )
-    ^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-        endpoint,
-    ...<3 lines>...
-        force_external=_external,
-    )
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/werkzeug/routing/map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'api.login'. Did you mean 'login' instead?
-2025-03-31 18:11:28,572 - ERROR - Exception on /login [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/main_c.py", line 64, in login
-    return render_template('login.html')
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/templates/login.html", line 353, in top-level template code
-    <a href="{{ url_for('api.register') }}" class="btn-signup">Sign Up</a>
-    ^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-        endpoint,
-    ...<3 lines>...
-        force_external=_external,
-    )
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/werkzeug/routing/map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'api.register'. Did you mean 'google.login' instead?
-2025-03-31 18:18:30,574 - ERROR - Exception on /login [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/main_c.py", line 64, in login
-    return render_template('login.html')
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/templates/login.html", line 353, in top-level template code
-    <a href="{{ url_for('api.register') }}" class="btn-signup">Sign Up</a>
-    ^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-        endpoint,
-    ...<3 lines>...
-        force_external=_external,
-    )
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/werkzeug/routing/map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'api.register'. Did you mean 'google.login' instead?
-2025-03-31 18:22:04,296 - ERROR - Exception on / [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/main_c.py", line 67, in index
-    return render_template("login.html")
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/templates/login.html", line 353, in top-level template code
-    <a href="{{ url_for('api.register') }}" class="btn-signup">Sign Up</a>
-    ^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-        endpoint,
-    ...<3 lines>...
-        force_external=_external,
-    )
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/werkzeug/routing/map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'api.register'. Did you mean 'google.login' instead?
-2025-03-31 19:03:52,690 - ERROR - Exception on /login/google [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 236, in login
-    flask.session[state_key] = state
-    ~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/sessions.py", line 104, in _fail
-    raise RuntimeError(
-    ...<3 lines>...
-    )
-RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
-2025-03-31 19:03:57,391 - ERROR - Exception on /login/google [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 236, in login
-    flask.session[state_key] = state
-    ~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/sessions.py", line 104, in _fail
-    raise RuntimeError(
-    ...<3 lines>...
-    )
-RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
-2025-03-31 19:06:04,422 - INFO - [USER] - new user ryan29li33
-2025-03-31 19:06:04,427 - ERROR - Exception on /login/google/authorized [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 319, in authorized
-    results = oauth_authorized.send(self, token=token) or []
-              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/blinker/base.py", line 249, in send
-    result = receiver(sender, **kwargs)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 92, in google_logged_in
-    user_id = create_new_user_from_google(google_info)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 74, in create_new_user_from_google
-    User(username, email, firstname, lastname).save() # password will be OAuth
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 51, in save
-    execute_update(query, (self._username, self._email,
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                          self._firstname, self._lastname, self._password_hash))
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 33, in execute_update
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 19:06:55,984 - INFO - [USER] - new user ryan29li33
-2025-03-31 19:06:55,990 - ERROR - Exception on /login/google/authorized [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 319, in authorized
-    results = oauth_authorized.send(self, token=token) or []
-              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/blinker/base.py", line 249, in send
-    result = receiver(sender, **kwargs)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 92, in google_logged_in
-    user_id = create_new_user_from_google(google_info)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 74, in create_new_user_from_google
-    User(username, email, firstname, lastname).save() # password will be OAuth
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 51, in save
-    execute_update(query, (self._username, self._email,
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                          self._firstname, self._lastname, self._password_hash))
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 33, in execute_update
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 19:11:23,305 - INFO - [USER] - new user ryan29li33
-2025-03-31 19:11:23,311 - ERROR - Exception on /login/google/authorized [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 319, in authorized
-    results = oauth_authorized.send(self, token=token) or []
-              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/blinker/base.py", line 249, in send
-    result = receiver(sender, **kwargs)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 92, in google_logged_in
-    user_id = create_new_user_from_google(google_info)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 74, in create_new_user_from_google
-    User(username, email, firstname, lastname).save() # password will be OAuth
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 51, in save
-    execute_update(query, (self._username, self._email,
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                          self._firstname, self._lastname, self._password_hash))
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 33, in execute_update
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 19:11:54,832 - INFO - [USER] - new user ryan29li33
-2025-03-31 19:11:54,847 - ERROR - Exception on /login/google/authorized [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 319, in authorized
-    results = oauth_authorized.send(self, token=token) or []
-              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/blinker/base.py", line 249, in send
-    result = receiver(sender, **kwargs)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 92, in google_logged_in
-    user_id = create_new_user_from_google(google_info)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 74, in create_new_user_from_google
-    User(username, email, firstname, lastname).save() # password will be OAuth
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 51, in save
-    execute_update(query, (self._username, self._email,
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                          self._firstname, self._lastname, self._password_hash))
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 33, in execute_update
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 19:14:02,318 - INFO - [USER] - new user ryan29li33
-2025-03-31 19:14:02,320 - ERROR - Exception on /login/google/authorized [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 319, in authorized
-    results = oauth_authorized.send(self, token=token) or []
-              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/blinker/base.py", line 249, in send
-    result = receiver(sender, **kwargs)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 92, in google_logged_in
-    user_id = create_new_user_from_google(google_info)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 74, in create_new_user_from_google
-    User(username, email, firstname, lastname).save() # password will be OAuth
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 51, in save
-    execute_update(query, (self._username, self._email,
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                          self._firstname, self._lastname, self._password_hash))
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 33, in execute_update
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 19:14:24,601 - INFO - [USER] - new user ryan29li33
-2025-03-31 19:14:24,607 - ERROR - Exception on /login/google/authorized [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 319, in authorized
-    results = oauth_authorized.send(self, token=token) or []
-              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/blinker/base.py", line 249, in send
-    result = receiver(sender, **kwargs)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 93, in google_logged_in
-    user_id = create_new_user_from_google(google_info)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 75, in create_new_user_from_google
-    User(username, email, firstname, lastname).save() # password will be OAuth
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 51, in save
-    execute_update(query, (self._username, self._email,
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                          self._firstname, self._lastname, self._password_hash))
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 33, in execute_update
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 19:20:16,796 - INFO - [AUTH] - Google login initiated
-2025-03-31 19:20:19,826 - INFO - [AUTH] - OAuth callback triggered with token: True
-2025-03-31 19:20:19,989 - ERROR - Exception on /login/google/authorized [GET]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask_dance/consumer/oauth2.py", line 319, in authorized
-    results = oauth_authorized.send(self, token=token) or []
-              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/blinker/base.py", line 249, in send
-    result = receiver(sender, **kwargs)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 111, in google_logged_in
-    user_id = create_new_user_from_google(google_info)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 78, in create_new_user_from_google
-    existing_user = User.get_by_email(email)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 31, in get_by_email
-    result = execute_query(query, (email,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 14, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 19:24:27,750 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-03-31 19:31:11,100 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-03-31 19:31:54,679 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-03-31 20:35:30,513 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-03-31 20:40:51,353 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-03-31 21:06:37,785 - ERROR - Exception on /login [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 21, in login
-    if not authorize_user(username, password):
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 33, in authorize_user
-    user_info = User.get_by_username(username)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 14, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 21:56:00,736 - ERROR - Exception on /login [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 21, in login
-    if not authorize_user(username, password):
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 33, in authorize_user
-    user_info = User.get_by_username(username)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 14, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 21:56:47,749 - ERROR - Exception on /signup [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 54, in register
-    if verify_exist(username, email):
-       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 47, in verify_exist
-    if User.get_by_username(username) or User.get_by_email(email):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 14, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 22:23:42,776 - ERROR - Exception on /signup [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 54, in register
-    if verify_exist(username, email):
-       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 47, in verify_exist
-    if User.get_by_username(username) or User.get_by_email(email):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 14, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-03-31 22:26:06,095 - ERROR - Exception on /signup [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 54, in register
-    if verify_exist(username, email):
-       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 75, in verify_exist
-    if User.get_by_username(username) or User.get_by_email(email):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 14, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-04-02 22:42:12,136 - ERROR - Exception on /signup [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 54, in register
-    if verify_exist(username, email):
-       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 75, in verify_exist
-    if User.get_by_username(username) or User.get_by_email(email):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 14, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-04-02 22:55:24,101 - ERROR - Exception on /signup [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 54, in register
-    if verify_exist(username, email):
-       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 75, in verify_exist
-    if User.get_by_username(username) or User.get_by_email(email):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 14, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 5, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-04-02 23:22:26,212 - ERROR - Exception on /signup [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 54, in register
-    if verify_exist(username, email):
-       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 75, in verify_exist
-    if User.get_by_username(username) or User.get_by_email(email):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 20, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 12, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-04-02 23:33:20,645 - ERROR - Exception on /signup [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 54, in register
-    if verify_exist(username, email):
-       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 75, in verify_exist
-    if User.get_by_username(username) or User.get_by_email(email):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 26, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 16, in get_db_connection
-    conn = sqlite3.connect(db_path)
-sqlite3.OperationalError: unable to open database file
-2025-04-03 00:40:16,423 - ERROR - Exception on /signup [POST]
-Traceback (most recent call last):
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/api/routes.py", line 54, in register
-    if verify_exist(username, email):
-       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/services/auth.py", line 75, in verify_exist
-    if User.get_by_username(username) or User.get_by_email(email):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/models/user.py", line 20, in get_by_username
-    result = execute_query(query, (username,))
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 20, in execute_query
-    conn = get_db_connection()
-  File "/Users/xuanruli/Desktop/fintech512-apex-trades/app/db/__init__.py", line 12, in get_db_connection
-    conn = sqlite3.connect('db/apex_data.db')
-sqlite3.OperationalError: unable to open database file
-2025-04-03 02:43:23,958 - INFO - [USER] - new user xxx
-2025-04-03 02:43:23,961 - INFO - [DATABASE] - new user added xxx
-2025-04-03 02:54:03,701 - INFO - [USER] - new user www
-2025-04-03 02:54:03,703 - INFO - [DATABASE] - new user added www
-2025-04-03 02:57:41,452 - INFO - [USER] - new user 1
-2025-04-03 02:57:41,454 - INFO - [DATABASE] - new user added 1
-2025-04-03 02:58:23,247 - INFO - [USER] - new user 112
-2025-04-03 02:58:23,249 - INFO - [DATABASE] - new user added 112
-2025-04-03 03:16:56,564 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-04-03 03:17:20,828 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-04-03 03:44:58,804 - INFO - [USER] - new user qqq
-2025-04-03 03:44:58,808 - INFO - [DATABASE] - new user added qqq
-2025-04-03 03:45:02,952 - INFO - [AUTH] - verified user log in: qqq
-2025-04-03 04:54:27,356 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-04-03 04:55:00,723 - INFO - [USER] - new user xuanru
-2025-04-03 04:55:00,725 - INFO - [DATABASE] - new user added xuanru
-2025-04-03 04:55:05,908 - INFO - [AUTH] - verified user log in: xuanru
-2025-04-03 04:57:06,686 - INFO - [AUTH] - verified user log in: xuanru
-2025-04-03 04:57:46,196 - INFO - [AUTH] - verified user log in: xuanru
-2025-04-03 05:14:59,338 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
-2025-04-03 05:15:32,974 - INFO - [USER] - new user xuanru1
-2025-04-03 05:15:32,976 - INFO - [DATABASE] - new user added xuanru1
-2025-04-03 05:15:42,541 - INFO - [AUTH] - verified user log in: xuanru1
+2025-04-14 22:48:00,994 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:48:54,916 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:50:13,750 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:50:15,310 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:50:28,644 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:50:44,886 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:51:06,386 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:51:07,685 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:51:08,670 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:51:14,034 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:51:27,989 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:56:41,002 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:56:43,143 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:57:18,498 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:57:41,699 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:57:52,052 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:58:11,811 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:58:20,827 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:58:30,227 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:58:40,802 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:58:56,606 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:59:20,738 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 22:59:42,114 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:00:03,905 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:00:05,268 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:00:26,718 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:00:40,393 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:00:51,780 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:01:27,779 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:01:58,041 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:02:51,543 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:03:07,712 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:19:42,634 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:20:18,469 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:21:19,427 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:26:04,327 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:26:20,363 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:26:33,975 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:26:48,746 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:28:16,179 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:28:31,011 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:34:07,616 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:37:33,576 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:38:15,351 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:38:44,188 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:39:08,227 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:39:45,270 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:43:45,588 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:44:09,181 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:47:18,217 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:48:51,356 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:49:35,281 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:49:48,107 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:51:16,067 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:51:31,636 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:52:37,166 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:52:52,785 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:53:05,106 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-14 23:53:22,679 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:02:43,816 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:03:24,906 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:03:33,134 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:06:58,021 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:07:06,732 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:07:58,965 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:10:50,447 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:11:20,315 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:11:46,116 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:13:28,866 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:14:07,949 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:51:37,591 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:52:00,857 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:52:42,842 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:53:21,228 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:53:37,157 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:53:50,852 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:54:15,170 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:55:01,092 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:55:40,397 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:55:51,014 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:56:08,241 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:56:14,943 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:58:34,285 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:59:00,583 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 00:59:48,649 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:12:00,225 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:12:10,786 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:12:51,231 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:12:58,617 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:13:25,401 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:13:38,872 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:13:53,419 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:15:29,583 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:15:31,070 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:19:42,624 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:22:06,813 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:22:19,108 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:27:30,404 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:28:48,827 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:29:05,174 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:29:16,210 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:29:29,560 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:29:40,172 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:36:07,092 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 01:39:56,357 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:03:07,163 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:03:20,772 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:08:48,229 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:10:23,360 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:11:27,198 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:14:19,364 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:20:26,075 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:20:45,432 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:40:50,216 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:41:13,406 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 02:44:10,711 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 03:06:18,579 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 03:07:21,355 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 03:13:00,912 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 03:13:13,879 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 03:18:24,773 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
+2025-04-15 03:22:27,355 - INFO - [TRANSACTION] - Inserted new transaction for user 9
+2025-04-15 03:22:27,357 - INFO - [PORTFOLIO] - user 9 sell 1 of AAPL with 224.24 and now user new holding cost for AAPL is 630.4775999999999 and 3.0 shares
+2025-04-15 03:22:27,377 - INFO - [PORTFOLIO] User 9's total value: 3504.55 with total shares 13.0 + total cost 3113.3847428571426 + total P&L 391.1602571428575
+2025-04-15 03:31:40,316 - INFO - [PORTFOLIO] User 9's total value: 3504.55 with total shares 13.0 + total cost 3113.3847428571426 + total P&L 391.1602571428575
+2025-04-15 03:31:51,174 - INFO - [TRANSACTION] - Inserted new transaction for user 9
+2025-04-15 03:31:51,178 - INFO - [PORTFOLIO] - user 9 buy 1 of AAPL with 224.24 and now user new holding cost for AAPL is 854.7176 and 4.0 shares
+2025-04-15 03:31:51,190 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
+2025-04-15 03:36:12,889 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
+2025-04-15 03:36:50,938 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
+2025-04-15 05:54:07,908 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
+2025-04-15 15:21:24,485 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
+2025-04-15 15:21:52,796 - INFO - [TRANSACTION] - Inserted new transaction for user 9
+2025-04-15 15:21:52,799 - INFO - [PORTFOLIO] - user 9 buy 2 of AAPL with 224.24 and now user new holding cost for AAPL is 1303.1976 and 6.0 shares
+2025-04-15 15:21:52,814 - INFO - [PORTFOLIO] User 9's total value: 4177.27 with total shares 16.0 + total cost 3786.1047428571424 + total P&L 391.160257142858

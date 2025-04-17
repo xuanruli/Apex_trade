@@ -14,6 +14,17 @@ class Transaction:
         self._transaction_type = transaction_type
         self._transaction_date = transaction_date
 
+    @property
+    def transaction_type(self):
+        return self._transaction_type
+
+    @property
+    def shares(self):
+        return self._shares
+
+    @property
+    def price_per_share(self):
+        return self._price_per_share
 
     def save(self):
         """
@@ -46,7 +57,7 @@ class Transaction:
                 self._id = result[0]['id']
 
     @staticmethod
-    def get_user_transactions(user_id):
+    def get_all_transactions(user_id):
         """
         Retrieve all transactions for the given user, ordered by transaction_date ASC.
         """
@@ -57,15 +68,16 @@ class Transaction:
         rows = execute_query(query, (user_id,))
         transactions = []
         for row in rows:
-            tx = Transaction(
-                id=row['id'],
-                user_id=row['user_id'],
-                stock_symbol=row['stock_symbol'],
-                shares=row['shares'],
-                price_per_share=row['price_per_share'],
-                transaction_type=row['transaction_type'],
-                transaction_date=row['transaction_date']
-            )
+            quantity, price = row['shares'], row['price_per_share']
+            total = row['shares'] * row['price_per_share']
+            tx = {
+                "stock_symbol": row['stock_symbol'],
+                "shares": quantity,
+                "price": price,
+                "transaction_type": row['transaction_type'],
+                "transaction_date": row['transaction_date'],
+                "total": -total if row['transaction_type'] == "buy" else total
+            }
             transactions.append(tx)
         return transactions
 
@@ -74,18 +86,7 @@ class Transaction:
         """
         Find a single transaction by its primary key ID.
         """
-        query = """
-            SELECT
-                id,
-                user_id,
-                stock_symbol,
-                shares,
-                price_per_share,
-                transaction_type,
-                transaction_date
-            FROM transactions
-            WHERE id = ?
-        """
+        query = """SELECT id, user_id, stock_symbol, shares, price_per_share, transaction_type, transaction_date FROM transactions WHERE id = ?"""
         rows = execute_query(query, (transaction_id,))
         if rows:
             row = rows[0]
@@ -133,57 +134,9 @@ class Transaction:
             transactions.append(tx)
         return transactions
 
-    @staticmethod
-    def delete_transaction(transaction_id):
-        """
-        Delete a transaction by its ID.
-        """
-        try:
-            query = "DELETE FROM transactions WHERE id = ?"
-            execute_update(query, (transaction_id,))
-            logger.info(f"[TRANSACTION] - Deleted transaction {transaction_id}")
-            return True
-        except Exception as e:
-            logger.error(f"[TRANSACTION] - Error deleting transaction {transaction_id}: {e}")
-            return False
-
-    @staticmethod
-    def calculate_portfolio_impact(user_id, stock_symbol):
-        """
-        Calculate the total shares and cost basis for a specific stock in a user's portfolio
-        based on all transactions.
-        """
-        transactions = Transaction.get_by_stock_and_user(user_id, stock_symbol)
-
-        total_shares = 0
-        total_cost = 0
-
-        for tx in transactions:
-            if tx.transaction_type == 'buy':
-                total_shares += tx.shares
-                total_cost += tx.shares * tx.price_per_share
-            elif tx.transaction_type == 'sell':
-                if total_shares >= tx.shares:
-                    # Simplified approach: reduce shares proportionally to maintain average cost
-                    share_ratio = (total_shares - tx.shares) / total_shares if total_shares > 0 else 0
-                    total_cost *= share_ratio
-                    total_shares -= tx.shares
-                else:
-                    # Error case: selling more than owned
-                    logger.warning(f"[TRANSACTION] - Attempting to sell more shares than owned: {tx.id}")
-                    total_shares = 0
-                    total_cost = 0
-
-        # Calculate cost basis (average cost per share)
-        cost_basis = total_cost / total_shares if total_shares > 0 else 0
-
-        return (total_shares, cost_basis)
-
     def to_dict(self):
         """
         Convert transaction object to a dictionary
-
-        :return: Dictionary representation of the transaction
         """
         return {
             'id': self._id,

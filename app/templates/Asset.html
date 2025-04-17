@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script defer src="{{ url_for('static', filename='scripts.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='asset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
 </head>
 <body>
     <nav class="navbar">
@@ -22,9 +21,10 @@
                 <a href="{{ url_for('api.news') }}">News</a>
                 <a href="/about">About Us</a>
             </div>
+            <!-- Updated Search Bar -->
             <div class="search-container">
-                <form class="search-form">
-                    <input type="search" placeholder="Search symbol or site..." class="search-input">
+                <form class="search-form" action="{{ url_for('api.asset') }}" method="get">
+                    <input type="search" name="symbol" placeholder="Search symbol or site..." class="search-input" required>
                     <button type="submit" class="search-button">
                         <i class="fas fa-search"></i>
                     </button>
@@ -32,8 +32,13 @@
             </div>
         </div>
         <div class="navbar-buttons">
-            <button class="btn-login">Login</button>
-            <button class="btn-signup">Sign Up</button>
+            {% if session.get('id') %}
+                <span class="welcome-text">{{ session.get('username') }} ｜{{ session.get('name') }} </span>
+                <a href="{{ url_for('api.logout') }}" class="btn-signup">Logout</a>
+            {% else %}
+                <a href="{{ url_for('api.login') }}" class="btn-login">Login</a>
+                <a href="{{ url_for('api.register') }}" class="btn-signup">Sign Up</a>
+            {% endif %}
         </div>
     </nav>
 
@@ -46,29 +51,115 @@
             <div class="stock-details">
                 <p class="price">${{ stock.Price }}</p>
                 <p class="high-low">
-                    <i class="fas fa-arrow-up text-success"></i> High: ${{ stock.WeekHigh }} 
+                    <i class="fas fa-arrow-up text-success"></i> High: ${{ stock.WeekHigh }}
                     <i class="fas fa-arrow-down text-danger ms-3"></i> Low: ${{ stock.WeekLow }}
                 </p>
             </div>
         </div>
 
+        <div class="date-filter-form container mt-4">
+            <h5>Filter Stock Data by Date Range</h5>
+            <form action="{{ url_for('api.asset') }}" method="get" class="row g-3">
+                <input type="hidden" name="symbol" value="{{ stock.Symbol }}">
+
+                <div class="col-md-3">
+                    <label for="start_date" class="form-label">Start Date</label>
+                    <input type="date" id="start_date" name="start_date" class="form-control" value="{{ start_date }}" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="end_date" class="form-label">End Date</label>
+                    <input type="date" id="end_date" name="end_date" class="form-control" value="{{ end_date }}" required>
+                </div>
+                <div class="col-md-3 align-self-end">
+                    <button type="submit" class="btn btn-primary">Apply Filter</button>
+                </div>
+            </form>
+        </div>
+
         <div class="chart-container">
             <!-- Candlestick Chart -->
             <div id="candlestickChart">{{ candlestick_chart | safe }}</div>
-            
+
             <!-- Line Chart -->
             <div id="lineChart">{{ line_chart | safe }}</div>
-            
+
             <!-- Bar Chart -->
             <div id="barChart">{{ bar_chart | safe }}</div>
         </div>
-        
+
+        <!-- Order Button Container -->
+        <form class="order-container" method="POST" action="{{ url_for('api.trade') }}">
+            <h3>Place Order</h3>
+            <div class="order-form">
+                <div class="flash-messages-container">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <input type="hidden" name="symbol" value="{{ stock.Symbol }}">
+                <input type="hidden" name="return_to" value="asset">
+                <div class="order-type-selector">
+                    <button type="button" class="order-type-btn active" data-type="buy">Buy</button>
+                    <button type="button" class="order-type-btn" data-type="sell">Sell</button>
+                    <input type="hidden" id="actionType" name="actionType" value="buy">
+                </div>
+
+                <div class="order-inputs">
+                    <div class="input-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="order-type">Order Type</label>
+                        <select id="order-type" name="orderType">
+                            <option value="market">Market</option>
+                            <option value="limit">Limit</option>
+                            <option value="stop">Stop</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" id="price-input">
+                        <label for="price">Price ($)</label>
+                        <input type="number" id="price" name="price" step="0.01" value="{{ stock.Price }}">
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-item">
+                        <span>Current Price:</span>
+                        <span class="current-price">$<span id="stockPrice"></span></span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Estimated Total:</span>
+                        <span class="total-price">$<span id="totalPrice">0.00</span></span>
+                    </div>
+                </div>
+
+                <button type="submit" id="place-order-btn" class="place-order-btn">Place Order</button>
+            </div>
+        </form>
+
+        <!-- News Section -->
         <div class="news-container">
             <h3>Recent News</h3>
             <ul id="news-list" class="list-group">
-                <li class="list-group-item">Apple announces new AI features coming to iOS</li>
-                <li class="list-group-item">Analysts raise price target for {{ stock.Symbol }} following strong earnings</li>
-                <li class="list-group-item">Apple Vision Pro sales exceed expectations</li>
+                <li class="list-group-item">
+                    <a href="{{ urls[0] }}" target="_blank" rel="noopener noreferrer">{{ titles[0] }}</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ urls[1] }}" target="_blank" rel="noopener noreferrer">{{ titles[1] }}</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ urls[2] }}" target="_blank" rel="noopener noreferrer">{{ titles[2] }}</a>
+                </li>
             </ul>
         </div>
 
@@ -112,5 +203,100 @@
     <footer class="footer">
         &copy; 2025 Stock Trading Platform. All Rights Reserved.
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const stockSymbol = document.getElementById('stockSymbol')?.getAttribute('data-symbol');
+        const stockPriceElement = document.querySelector('.price');
+        const currentPrice = stockPriceElement ? parseFloat(stockPriceElement.textContent.replace('$', '').trim()) : 150.00;
+
+        document.getElementById('stockPrice').textContent = currentPrice.toFixed(2);
+        document.getElementById('price').value = currentPrice.toFixed(2);
+
+        calculateTotal();
+
+        const orderTypeBtns = document.querySelectorAll('.order-type-btn');
+        orderTypeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                orderTypeBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const orderType = this.getAttribute('data-type');
+                const actionTypeInput = document.getElementById('actionType');
+                actionTypeInput.value = orderType;
+
+                const placeOrderBtn = document.getElementById('place-order-btn');
+
+                if (orderType === 'buy') {
+                    placeOrderBtn.style.backgroundColor = 'var(--primary-color, #28a745)';
+                    placeOrderBtn.textContent = 'Place Buy Order';
+                } else {
+                    placeOrderBtn.style.backgroundColor = '#e53e3e';
+                    placeOrderBtn.textContent = 'Place Sell Order';
+                }
+
+                calculateTotal();
+            });
+        });
+
+        const orderTypeSelect = document.getElementById('order-type');
+        const priceInput = document.getElementById('price-input');
+
+        orderTypeSelect.addEventListener('change', function() {
+            const selectedOrderType = this.value;
+
+            if (selectedOrderType === 'market') {
+                priceInput.style.display = 'none';
+            } else {
+                priceInput.style.display = 'block';
+            }
+
+            calculateTotal();
+        });
+
+        document.getElementById('quantity').addEventListener('input', calculateTotal);
+        document.getElementById('price').addEventListener('input', calculateTotal);
+
+        const orderForm = document.querySelector('.order-container');
+        orderForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const orderType = document.querySelector('.order-type-btn.active').getAttribute('data-type');
+            const quantity = document.getElementById('quantity').value;
+            const executionType = document.getElementById('order-type').value;
+            const price = document.getElementById('price').value;
+
+            let confirmMessage = `Confirm ${orderType.toUpperCase()} order for ${quantity} shares`;
+            if (stockSymbol) {
+                confirmMessage += ` of ${stockSymbol}`;
+            }
+            if (executionType !== 'market') {
+                confirmMessage += ` at $${price} per share`;
+            }
+            confirmMessage += '?';
+
+            if (confirm(confirmMessage)) {
+                this.submit();
+            }
+        });
+
+        function calculateTotal() {
+            const quantity = parseInt(document.getElementById('quantity').value) || 0;
+            const orderTypeValue = document.getElementById('order-type').value;
+            let price = currentPrice;
+
+            if (orderTypeValue !== 'market') {
+                price = parseFloat(document.getElementById('price').value) || currentPrice;
+            }
+
+            const total = quantity * price;
+            document.getElementById('totalPrice').textContent = total.toFixed(2);
+        }
+
+        if (orderTypeSelect.value === 'market') {
+            priceInput.style.display = 'none';
+        }
+    });
+    </script>
 </body>
 </html>

@@ -6,13 +6,14 @@
     <title>Portfolio - Echelon</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='portfolio.css') }}">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="navbar-left">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="{{ url_for('static', filename='Logo1.png') }}" alt="Logo" />
             </a>
             <div class="navbar-menu">
@@ -31,213 +32,320 @@
             </div>
         </div>
         <div class="navbar-buttons">
-            <button class="btn-login">Login</button>
-            <button class="btn-signup">Sign Up</button>
+            <span class="welcome-text">{{ session.get('username') }} ｜{{ session.get('name') }} </span>
+            <a href="{{ url_for('api.logout') }}" class="btn-signup">Logout</a>
         </div>
     </nav>
 
-    <div class="portfolio-container">
+        <!-- Right Content Area -->
+        <div class="portfolio-container">
         <!-- Left Sidebar with Portfolio Statistics -->
         <div class="portfolio-sidebar">
             <div class="stats-header">
                 <h3>Portfolio Statistics</h3>
-                <button class="refresh-button">
+                <button class="refresh-button" onclick="window.location.reload()">
                     <i class="fas fa-sync-alt"></i>
                 </button>
             </div>
-            <div class="stat-item">
-                <div class="stat-name">Number of Holdings</div>
-                <div class="stat-value">12</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-name">Total Market Value</div>
-                <div class="stat-value">$134,568.92</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-name">Cash Balance</div>
-                <div class="stat-value">$12,450.23</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-name">Daily Change</div>
-                <div class="stat-value positive">+$1,235.84 (0.92%)</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-name">Total P/L</div>
-                <div class="stat-value positive">+$22,784.53 (20.37%)</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-name">Dividend Yield</div>
-                <div class="stat-value">2.34%</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-name">Portfolio Beta</div>
-                <div class="stat-value">0.89</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-name">Last Updated</div>
-                <div class="stat-value">Mar 12, 2025 11:32 AM</div>
-            </div>
+            {% if portfolio_summary %}
+                <div class="stat-item">
+                    <div class="stat-name">Number of Holdings</div>
+                    <div class="stat-value">{{ portfolio_summary.total_holdings }}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-name">Total Market Value</div>
+                    <div class="stat-value">${{ "%.2f"|format(portfolio_summary.total_value) }}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-name">Total Cost Basis</div>
+                    <div class="stat-value">${{ "%.2f"|format(portfolio_summary.total_cost) }}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-name">Total P/L</div>
+                    <div class="stat-value {{ 'positive' if portfolio_summary.total_pl >= 0 else 'negative' }}">
+                        {{ '+' if portfolio_summary.total_pl >= 0 else '-' }}${{ "%.2f"|format(portfolio_summary.total_pl) }} ({{ "%.2f"|format(portfolio_summary.total_pl_percent) }}%)
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="empty-portfolio-message">
+                    <p>Your portfolio is empty. Start trading to see statistics.</p>
+                </div>
+            {% endif %}
         </div>
 
         <!-- Right Content Area -->
         <div class="portfolio-content">
             <!-- Holdings Section -->
             <div class="card">
+            <div class="flash-messages-container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
                 <div class="card-header">
                     <h3>Holdings</h3>
-                    <div class="filter-container">
-                        <button class="filter-button active">All</button>
-                        <button class="filter-button">Stocks</button>
-                        <button class="filter-button">ETFs</button>
-                        <button class="filter-button">Options</button>
-                    </div>
                 </div>
                 <div class="holdings-action-buttons">
                     <a href="{{ url_for('api.report') }}" class="btn-get-report">
                         <i class="fas fa-file-alt"></i> Get Report
                     </a>
                     <a href="{{ url_for('api.analysis') }}" class="btn-get-report">
-                        <i class="fas fa-file-alt"></i> Analysis
+                        <i class="fas fa-chart-line"></i> Analysis
+                    </a>
+                    <a href="{{ url_for('api.historical') }}" class="btn-get-report">
+                        <i class="fas fa-file-invoice-dollar"></i> Transaction
                     </a>
                 </div>
-                <table class="holdings-table">
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Quantity</th>
-                            <th>Avg Price</th>
-                            <th>Current Price</th>
-                            <th>Market Value</th>
-                            <th>Day Change</th>
-                            <th>Total P/L</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <span class="symbol">AAPL</span>
-                                <span class="symbol-name">Apple Inc.</span>
-                            </td>
-                            <td>120</td>
-                            <td>$175.34</td>
-                            <td>$187.29</td>
-                            <td class="market-value">$22,474.80</td>
-                            <td class="positive">+1.24%</td>
-                            <td class="positive">+$1,434.00 (6.82%)</td>
-                            <td>
-                                <button class="action-button">Trade</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="symbol">MSFT</span>
-                                <span class="symbol-name">Microsoft Corp.</span>
-                            </td>
-                            <td>85</td>
-                            <td>$325.14</td>
-                            <td>$347.68</td>
-                            <td class="market-value">$29,552.80</td>
-                            <td class="positive">+0.75%</td>
-                            <td class="positive">+$1,916.10 (6.93%)</td>
-                            <td>
-                                <button class="action-button">Trade</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="symbol">GOOGL</span>
-                                <span class="symbol-name">Alphabet Inc.</span>
-                            </td>
-                            <td>45</td>
-                            <td>$155.23</td>
-                            <td>$167.94</td>
-                            <td class="market-value">$7,557.30</td>
-                            <td class="positive">+2.15%</td>
-                            <td class="positive">+$572.85 (8.19%)</td>
-                            <td>
-                                <button class="action-button">Trade</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="symbol">TSLA</span>
-                                <span class="symbol-name">Tesla Inc.</span>
-                            </td>
-                            <td>60</td>
-                            <td>$245.87</td>
-                            <td>$228.14</td>
-                            <td class="market-value">$13,688.40</td>
-                            <td class="negative">-1.52%</td>
-                            <td class="negative">-$1,063.80 (-7.21%)</td>
-                            <td>
-                                <button class="action-button">Trade</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="symbol">AMZN</span>
-                                <span class="symbol-name">Amazon.com Inc.</span>
-                            </td>
-                            <td>70</td>
-                            <td>$177.56</td>
-                            <td>$193.84</td>
-                            <td class="market-value">$13,568.80</td>
-                            <td class="positive">+0.97%</td>
-                            <td class="positive">+$1,139.60 (9.17%)</td>
-                            <td>
-                                <button class="action-button">Trade</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="symbol">VOO</span>
-                                <span class="symbol-name">Vanguard S&P 500 ETF</span>
-                            </td>
-                            <td>55</td>
-                            <td>$412.78</td>
-                            <td>$435.64</td>
-                            <td class="market-value">$23,960.20</td>
-                            <td class="positive">+0.52%</td>
-                            <td class="positive">+$1,257.30 (5.54%)</td>
-                            <td>
-                                <button class="action-button">Trade</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
-            <!-- Performance Chart -->
-            <div class="card">
-                <div class="card-header">
-                    <h3>Performance</h3>
-                    <div class="filter-container">
-                        <button class="filter-button active">1W</button>
-                        <button class="filter-button">1M</button>
-                        <button class="filter-button">3M</button>
-                        <button class="filter-button">YTD</button>
-                        <button class="filter-button">1Y</button>
-                        <button class="filter-button">All</button>
+                {% if portfolio_summary %}
+                    <table class="holdings-table">
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Quantity</th>
+                                <th>Avg Price</th>
+                                <th>Current Price</th>
+                                <th>Market Value</th>
+                                <th>Total P/L</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in holding_summary %}
+                                <tr>
+                                    <td>
+                                        <span class="symbol">{{ item.symbol }}</span>
+                                    </td>
+                                    <td>{{ item.shares }}</td>
+                                    <td>${{ "%.2f"|format(item.avg_cost) }}</td>
+                                    <td>${{ "%.2f"|format(item.current_price) }}</td>
+                                    <td class="market-value">${{ "%.2f"|format(item.market_value) }}</td>
+                                    <td class="{{ 'positive' if item.gain_loss >= 0 else 'negative' }}">
+                                        {{ '+' if item.gain_loss >= 0 else '' }}${{ "%.2f"|format(item.gain_loss) }} ({{ "%.2f"|format(item.percent_change) }}%)
+                                    </td>
+                                    <td>
+                                        <div class="page-overlay"></div>
+                                        <button class="action-button" onclick="openTradeSidebar('{{ item.symbol }}', '', {{ item.shares }}, {{ item.current_price }})">Trade</button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <div class="empty-holdings-message">
+                        <p>You don't have any holdings yet. Start trading to build your portfolio.</p>
+                        <a href="{{ url_for('api.asset') }}" class="start-trading-btn">Explore Assets</a>
                     </div>
-                </div>
-                <div class="performance-card">
-                    <div class="performance-chart">
-                        <i class="fas fa-chart-line fa-3x"></i>
-                        <p>Performance chart visualization will appear here</p>
-                    </div>
-                    <div class="allocation-pie">
-                        <i class="fas fa-chart-pie fa-3x"></i>
-                        <p>Asset allocation chart will appear here</p>
-                    </div>
-                </div>
+                {% endif %}
             </div>
         </div>
     </div>
 
+    <!-- Trade Sidebar - Initially hidden -->
+    <div id="tradeSidebar" class="trade-sidebar">
+        <div class="trade-sidebar-header">
+            <h3>Trade <span id="tradeSymbol"></span></h3>
+            <button class="close-trade-btn">&times;</button>
+        </div>
+        <div class="trade-sidebar-content">
+            <form id="tradeForm" method="POST" action="{{ url_for('api.trade') }}">
+                <div class="order-inputs">
+                <input type="hidden" name="symbol" id="tradeSymbolInput">
+                <input type="hidden" name="return_to" value="portfolio">
+                <div class="order-type-selector">
+                    <button type="button" class="order-type-btn active" data-type="buy">Buy</button>
+                    <button type="button" class="order-type-btn" data-type="sell">Sell</button>
+                    <input type="hidden" id="actionType" name="actionType" value="buy">
+                </div>
+                    <div class="input-group">
+                        <label>Quantity
+                            <input type="number" id="tradeQuantity" name="quantity" min="1" value="1">
+                        </label>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="tradeOrderType">Order Type</label>
+                        <select id="tradeOrderType" name="orderType">
+                            <option value="market">Market</option>
+                            <option value="limit">Limit</option>
+                        </select>
+
+                    <div class="input-group" id="tradePriceInput">
+                        <label for="tradePrice">Price ($)</label>
+                        <input type="number" id="tradePrice" name="price" step="0.01">
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-item">
+                        <span>Current Price:</span>
+                        <span class="current-price">$<span id="tradeCurrentPrice">0.00</span></span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Current Holdings:</span>
+                        <span class="current-holdings"><span id="tradeCurrentHoldings">0</span> shares</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Estimated Total:</span>
+                        <span class="total-price">$<span id="tradeTotalPrice">0.00</span></span>
+                    </div>
+                </div>
+
+                <button type="submit" id="place-order-btn" class="place-order-btn">Place Order</button>
+             </div>
+            </form>
+        </div>
+    </div>
+
+
     <footer class="footer">
-        &copy; 2025 Echelon Trading Platform. All Rights Reserved.
+        &copy; 2025 Apex Trading Platform. All Rights Reserved.
     </footer>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tradeSidebar = document.getElementById('tradeSidebar');
+        const closeTradeSidebarBtn = document.querySelector('.close-trade-btn');
+        const pageOverlay = document.querySelector('.page-overlay');
+
+        // Close sidebar when clicking the close button
+        closeTradeSidebarBtn.addEventListener('click', function() {
+            tradeSidebar.classList.remove('active');
+            pageOverlay.classList.remove('active');
+        });
+
+        // Close sidebar when clicking outside
+        pageOverlay.addEventListener('click', function() {
+            tradeSidebar.classList.remove('active');
+            pageOverlay.classList.remove('active');
+        });
+
+        // Handle order type selection (buy/sell)
+        document.querySelectorAll('.order-type-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const orderType = this.dataset.type;
+                setOrderType(orderType);
+                updateTradeTotalPrice();
+            });
+        });
+
+        // Handle order type changes (market/limit/stop)
+        document.getElementById('tradeOrderType').addEventListener('change', function() {
+            const selectedType = this.value;
+            const priceInput = document.getElementById('tradePriceInput');
+
+            // Show price input for limit and stop orders, hide for market orders
+            if (selectedType === 'market') {
+                priceInput.style.display = 'none';
+            } else {
+                priceInput.style.display = 'block';
+            }
+
+            updateTradeTotalPrice();
+        });
+
+        // Update the total price whenever quantity or price changes
+        document.getElementById('tradeQuantity').addEventListener('input', updateTradeTotalPrice);
+        document.getElementById('tradePrice').addEventListener('input', updateTradeTotalPrice);
+
+        // Validation before form submission
+        document.getElementById('tradeForm').addEventListener('submit', function(event) {
+            const quantity = parseInt(document.getElementById('tradeQuantity').value) || 0;
+            const actionType = document.getElementById('actionType').value;
+            const currentShares = parseInt(document.getElementById('tradeCurrentHoldings').textContent) || 0;
+
+            // Validate the quantity
+            if (quantity <= 0) {
+                event.preventDefault();
+                showSidebarAlert('Quantity must be greater than zero', 'danger');
+                return;
+            }
+
+            // Check if selling more than owned
+            if (actionType === 'sell' && quantity > currentShares) {
+                event.preventDefault();
+                showSidebarAlert(`You can't sell more than you own (${currentShares} shares)`, 'danger');
+                return;
+            }
+        });
+
+        // Initialize price display for market orders on page load
+        const orderTypeSelect = document.getElementById('tradeOrderType');
+        if (orderTypeSelect.value === 'market') {
+            document.getElementById('tradePriceInput').style.display = 'none';
+        }
+    });
+
+    // Function to open the trade sidebar with pre-filled data
+    function openTradeSidebar(symbol, name, currentShares, currentPrice) {
+        const tradeSidebar = document.getElementById('tradeSidebar');
+        const pageOverlay = document.querySelector('.page-overlay');
+
+        // Set the symbol in the sidebar header and form input
+        document.getElementById('tradeSymbol').textContent = symbol;
+        document.getElementById('tradeSymbolInput').value = symbol;
+
+        // Set the current price
+        document.getElementById('tradeCurrentPrice').textContent = currentPrice.toFixed(2);
+        document.getElementById('tradePrice').value = currentPrice.toFixed(2);
+
+        // Set current holdings
+        document.getElementById('tradeCurrentHoldings').textContent = currentShares;
+
+        // Default to "buy" action
+        setOrderType('buy');
+
+        // Set default quantity to 1
+        document.getElementById('tradeQuantity').value = 1;
+
+        // Calculate and display the estimated total
+        updateTradeTotalPrice();
+
+        // Display the sidebar and overlay
+        tradeSidebar.classList.add('active');
+        pageOverlay.classList.add('active');
+    }
+
+    // Set the active order type button
+    function setOrderType(type) {
+        // Update the hidden input value
+        document.getElementById('actionType').value = type;
+        const placeOrderBtn = document.getElementById('place-order-btn');
+        // Update the active class on buttons
+        document.querySelectorAll('.order-type-btn').forEach(btn => {
+            if (btn.dataset.type === type) {
+                btn.classList.add('active');
+                placeOrderBtn.classList.add('sell');
+            } else {
+                btn.classList.remove('active');
+                placeOrderBtn.classList.remove('sell');
+            }
+        });
+    }
+
+    // Calculate and update the estimated total
+    function updateTradeTotalPrice() {
+        const quantity = parseInt(document.getElementById('tradeQuantity').value) || 0;
+        let price = parseFloat(document.getElementById('tradePrice').value) || 0;
+        const orderType = document.getElementById('tradeOrderType').value;
+
+        // For market orders, use the current price
+        if (orderType === 'market') {
+            price = parseFloat(document.getElementById('tradeCurrentPrice').textContent);
+        }
+
+        const total = quantity * price;
+        document.getElementById('tradeTotalPrice').textContent = total.toFixed(2);
+    }
+
+    </script>
 </body>
 </html>

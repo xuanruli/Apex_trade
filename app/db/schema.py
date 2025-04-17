@@ -94,7 +94,7 @@ def setup_database():
                        total_shares REAL NOT NULL,
                        cost_basis REAL NOT NULL,
                        FOREIGN KEY (user_id) REFERENCES users(id),
-                       FOREIGN KEY (stock_symbol) REFERENCES stock_info(symbol),
+                       FOREIGN KEY (stock_symbol) REFERENCES stock_data_daily(stock_symbol),
                        UNIQUE(user_id, stock_symbol)
                    )
                """)
@@ -112,7 +112,7 @@ def setup_database():
                        transaction_type TEXT NOT NULL,
                        transaction_date TEXT NOT NULL,
                        FOREIGN KEY (user_id) REFERENCES users(id),
-                       FOREIGN KEY (stock_symbol) REFERENCES stock_info(symbol)
+                       FOREIGN KEY (stock_symbol) REFERENCES stock_data_daily(stock_symbol),
                    )
                """)
         logger.info("[TABLE CREATE] - transactions")

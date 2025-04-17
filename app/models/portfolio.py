@@ -21,11 +21,7 @@ class Portfolio:
         """
         Load the user's holdings from the 'portfolio' table into self._holdings.
         """
-        query = """
-            SELECT stock_symbol, total_shares, cost_basis
-            FROM portfolio
-            WHERE user_id = ?
-        """
+        query = """SELECT stock_symbol, total_shares, cost_basis FROM portfolio WHERE user_id = ? """
         rows = execute_query(query, (self._user_id,))
         for row in rows:
             symbol = row['stock_symbol']
@@ -33,116 +29,72 @@ class Portfolio:
             cost_basis = row['cost_basis']
             self._holdings[symbol] = (shares, cost_basis)
 
-    def add_asset(self, symbol, quantity, price):
-        """
-        Add or update a given asset in the portfolio.
-        """
-        total_cost = quantity * price
-        existing = self._holdings.get(symbol)
-        if existing:
-            current_shares, current_basis = existing
-            new_shares = current_shares + quantity
-            new_basis = current_basis + total_cost
-            query = """
-                UPDATE portfolio
-                SET total_shares = ?, cost_basis = ?
-                WHERE user_id = ? AND stock_symbol = ?
-            """
-            execute_update(query, (new_shares, new_basis, self._user_id, symbol))
-            self._holdings[symbol] = (new_shares, new_basis)
+    def update_portfolio(self, symbol, quantity, price, order_type):
+
+        old_shares, old_cost = self._holdings.get(symbol, (0, 0))
+        order_cost = quantity * price
+        if (old_shares, old_cost) == (0, 0):
+            query = """INSERT INTO portfolio (user_id, stock_symbol, total_shares, cost_basis) VALUES (?, ?, ?, ?)"""
+            execute_update(query, (self._user_id, symbol, quantity, order_cost))
+            logger.info(f"[PORTFOLIO] - user {self._user_id} {order_type} {quantity} of {symbol} with {price} and this is the new holding cost")
+            return True
+
+        if order_type == "buy":
+            new_cost = old_cost + order_cost
+            new_shares = old_shares + quantity
+        elif order_type == "sell":
+            old_price = old_cost / old_shares
+            new_cost = old_cost - old_price * quantity
+            new_shares = old_shares - quantity
+            if new_shares == 0:
+                query = """DELETE FROM portfolio WHERE user_id = ? AND stock_symbol = ?"""
+                execute_update(query, (self._user_id, symbol,))
+                return True
         else:
-            query = """
-                INSERT INTO portfolio (user_id, stock_symbol, total_shares, cost_basis)
-                VALUES (?, ?, ?, ?)
-            """
-            execute_update(query, (self._user_id, symbol, quantity, total_cost))
-            self._holdings[symbol] = (quantity, total_cost)
+            raise ValueError("incorrect order type")
 
-        logger.info(f"[PORTFOLIO] User {self._user_id} added {quantity} shares of {symbol} at ${price} each.")
+        query = """UPDATE portfolio SET total_shares = ?, cost_basis = ? WHERE user_id = ? AND stock_symbol = ?"""
+        execute_update(query, (new_shares, new_cost, self._user_id, symbol,))
 
-    def remove_asset(self, symbol, quantity, price):
-        """
-        Remove shares of the given asset from the portfolio.
-        """
-        existing = self._holdings.get(symbol)
-        if not existing:
-            logger.info(f"[PORTFOLIO] User {self._user_id} has no holding in {symbol}.")
-            return False
-
-        current_shares, current_basis = existing
-        if quantity > current_shares:
-            logger.info(f"[PORTFOLIO] Not enough {symbol} shares to remove for user {self._user_id}.")
-            return False
-
-        new_shares = current_shares - quantity
-        if new_shares == 0:
-            query = """
-                DELETE FROM portfolio
-                WHERE user_id = ? AND stock_symbol = ?
-            """
-            execute_update(query, (self._user_id, symbol))
-            del self._holdings[symbol]
-            logger.info(f"[PORTFOLIO] User {self._user_id} removed all {symbol}.")
-        else:
-            # Adjust cost basis proportionally
-            ratio = new_shares / current_shares
-            new_basis = current_basis * ratio
-            query = """
-                UPDATE portfolio
-                SET total_shares = ?, cost_basis = ?
-                WHERE user_id = ? AND stock_symbol = ?
-            """
-            execute_update(query, (new_shares, new_basis, self._user_id, symbol))
-            self._holdings[symbol] = (new_shares, new_basis)
-            logger.info(
-                f"[PORTFOLIO] User {self._user_id} removed {quantity} shares of {symbol}, new total={new_shares}")
-
+        logger.info(f"[PORTFOLIO] - user {self._user_id} {order_type} {quantity} of {symbol} with {price} and now user new holding cost for {symbol} is {new_cost} and {new_shares} shares")
         return True
 
-    def calculate_total_value(self):
+    def get_portfolio_summary(self):
         """
         Calculate total market value by multiplying each holding's shares
-        by the latest close_price in 'stock_data_daily'.
+        by the latest close_price in 'stock_data_hourly'.
         """
-        total_value = 0.0
+        total_value, total_holdings, total_cost = 0.0, 0, 0.0
 
-        for symbol, (shares, _) in self._holdings.items():
-            query = """
-                SELECT close_price
-                FROM stock_data_daily
-                WHERE stock_symbol = ?
-                ORDER BY closing_date DESC
-                LIMIT 1
-            """
+        for symbol, (shares, cost_basis) in self._holdings.items():
+            query = """SELECT close_price FROM stock_data_hourly WHERE stock_symbol = ? ORDER BY closing_date DESC LIMIT 1 """
             row = execute_query(query, (symbol,))
             if row:
                 total_value += (row[0]['close_price'] * shares)
+            total_holdings += shares
+            total_cost += cost_basis
+        total_pl_percent = ((total_value - total_cost) / total_cost) * 100 if total_cost else 0.0
+        total_pl = (total_value - total_cost)
 
-        logger.info(f"[PORTFOLIO] User {self._user_id}'s total value: {total_value:.2f}")
-        return total_value
+        logger.info(f"[PORTFOLIO] User {self._user_id}'s total value: {total_value:.2f} with total shares {total_holdings} + total cost {total_cost} + total P&L {total_pl}")
+        return {"total_holdings": total_holdings, "total_cost": total_cost, "total_value": total_value, "total_pl": total_pl, "total_pl_percent": total_pl_percent}
 
-    def get_portfolio_summary(self):
+    def get_holding_summary(self):
         """
         Returns a summary of the portfolio with current market values.
         """
         portfolio_summary = []
 
         for symbol, (shares, cost_basis) in self._holdings.items():
-            query = """
-                SELECT close_price
-                FROM stock_data_daily
-                WHERE stock_symbol = ?
-                ORDER BY closing_date DESC
-                LIMIT 1
-            """
+            query = """SELECT close_price FROM stock_data_hourly WHERE stock_symbol = ? ORDER BY closing_date DESC LIMIT 1"""
             price_result = execute_query(query, (symbol,))
 
             if price_result:
                 current_price = price_result[0]['close_price']
                 avg_cost = cost_basis / shares if shares > 0 else 0
                 market_value = current_price * shares
-                gain_loss = market_value - cost_basis
-                percent_change = (gain_loss / cost_basis) * 100 if cost_basis > 0 else 0
+                PL = market_value - cost_basis
+                percent_PL = (PL / cost_basis) * 100 if cost_basis > 0 else 0
 
                 portfolio_summary.append({
                     'symbol': symbol,
@@ -151,11 +103,19 @@ class Portfolio:
                     'cost_basis': cost_basis,
                     'current_price': current_price,
                     'market_value': market_value,
-                    'gain_loss': gain_loss,
-                    'percent_change': percent_change
+                    'gain_loss': PL,
+                    'percent_change': percent_PL
                 })
 
         return portfolio_summary
+
+    @staticmethod
+    def check_portfolio(user_id):
+        query = """SELECT COUNT(*) as count FROM portfolio WHERE user_id = ?"""
+        result = execute_query(query,(user_id,))
+        if result[0]['count'] == 0:
+            return False
+        return True
 
     @staticmethod
     def get_by_user_id(user_id):
@@ -169,11 +129,7 @@ class Portfolio:
         """
         Get a specific holding from a user's portfolio.
         """
-        query = """
-            SELECT total_shares, cost_basis
-            FROM portfolio
-            WHERE user_id = ? AND stock_symbol = ?
-        """
+        query = """ SELECT total_shares, cost_basis FROM portfolio WHERE user_id = ? AND stock_symbol = ?"""
         result = execute_query(query, (user_id, symbol))
 
         if result:
@@ -187,55 +143,7 @@ class Portfolio:
 
         :return: A list of user_ids that have portfolios
         """
-        query = """
-            SELECT DISTINCT user_id
-            FROM portfolio
-        """
+        query = """ SELECT DISTINCT user_id FROM portfolio"""
         result = execute_query(query, ())
         return [row['user_id'] for row in result]
 
-    def update_from_transactions(self, transactions):
-        """
-        Rebuild the portfolio based on transaction history.
-        This is useful for reconciliation or after deleting transactions.
-
-        :param transactions: List of Transaction objects
-        """
-        # Clear existing holdings
-        clear_query = """
-            DELETE FROM portfolio
-            WHERE user_id = ?
-        """
-        execute_update(clear_query, (self._user_id,))
-
-        # Reset holdings dictionary
-        self._holdings = {}
-
-        # Process each transaction
-        for tx in transactions:
-            if tx.transaction_type.lower() == 'buy':
-                self.add_asset(tx.stock_symbol, tx.shares, tx.price_per_share)
-            elif tx.transaction_type.lower() == 'sell':
-                self.remove_asset(tx.stock_symbol, tx.shares, tx.price_per_share)
-
-        logger.info(f"[PORTFOLIO] Updated portfolio for user {self._user_id} from transactions")
-
-    def to_dict(self):
-        """
-        Convert portfolio to dictionary for JSON serialization
-
-        :return: Dictionary representation of portfolio
-        """
-        portfolio_dict = {
-            'user_id': self._user_id,
-            'holdings': {}
-        }
-
-        for symbol, (shares, cost_basis) in self._holdings.items():
-            portfolio_dict['holdings'][symbol] = {
-                'shares': shares,
-                'cost_basis': cost_basis,
-                'avg_cost': cost_basis / shares if shares > 0 else 0
-            }
-
-        return portfolio_dict

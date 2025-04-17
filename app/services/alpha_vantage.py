@@ -199,5 +199,18 @@ def get_stock_quote(symbol):
         print(f"API request failed: {e}")
         return None
 
-
-
+def get_overview(symbol: str):
+    """
+    Get company overview from Alpha Vantage API.
+    Args:
+        symbol (str): The stock symbol of the company.
+    Returns:
+        dict: A dictionary containing the company overview data.
+    """
+    params = {
+        'function': 'OVERVIEW',
+        'symbol': symbol,
+        'apikey': ALPHA_VANTAGE_API_KEY
+    }
+    response = requests.get(BASE_URL, params=params)
+    return response.json()

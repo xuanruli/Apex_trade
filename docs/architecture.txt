@@ -1,0 +1,122 @@
+big-bucks-project/
+├── .github/
+│   └── workflows/
+│       └── ci-cd.yml         # CI/CD configuration # In Progress
+├── docker/
+│   ├── Dockerfile            # In Progress
+│   └── docker-compose.yml    # In Progress
+├── docs/
+│   ├── architecture.md       # System architecture diagrams
+│   └── security.md           # Security analysis
+├── app/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── routes.py         # Functions:
+│   │       # def get_stock_data(symbol)
+│   │       # def login()
+│   │       # def register()
+│   │       # def portfolio(user_id)
+│   │       # def asset_details(symbol)
+│   │       # def market_overview()
+│   │       # def generate_report(user_id, type)
+│   │       # def admin_dashboard()
+│   │       # def execute_trade(user_id, symbol, action, quantity)
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── asset.py          # Functions: # In Progress
+│   │       # class Asset: # In Progress # In Progress
+│   │       #   def __init__(self, symbol, name) # In Progress
+│   │       #   def get_current_price() # In Progress
+│   │       #   def get_historical_data(start_date, end_date) # In Progress
+│   │   ├── portfolio.py      # Functions: # DONE -- awaiting testing
+│   │       # class Portfolio: # DONE
+│   │       #   def __init__(self, user_id) # DONE
+│   │       #   def add_asset(asset, quantity, price) # DONE
+│   │       #   def remove_asset(asset, quantity, price) # DONE
+│   │       #   def calculate_total_value() # DONE
+│   │       #   def calculate_beta() # DONE
+│   │   ├── transaction.py    # Functions:  # DONE -- awaiting testing
+│   │       # class Transaction: # DONE
+│   │       #   def __init__(self, user_id, asset, action, quantity, price)# DONE
+│   │       #   def save()# DONE
+│   │       #   @staticmethod# DONE
+│   │       #   def get_user_transactions(user_id)# DONE
+│   │   └── user.py           # Functions: # In Progress
+│   │       # class User:# In Progress
+│   │       #   def __init__(self, username, email, password_hash)# In Progress
+│   │       #   def set_password(password)# In Progress
+│   │       #   def check_password(password)# In Progress
+│   │       #   def is_admin()# In Progress
+│   │
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── alpha_vantage.py  # Functions: # DONE
+│   │       # def fetch_stock_data(symbol, interval="1d") # DONE
+│   │       # def get_technical_indicators(symbol, indicator) # DONE
+│   │       # def handle_api_error(response) # DONE
+│   │   ├── auth.py           # Functions: # In Progress
+│   │       # def login_user(username, password) # In Progress
+│   │       # def register_user(username, password, email) # In Progress
+│   │       # def generate_2fa_code(user_id) # In Progress
+│   │       # def verify_2fa_code(user_id, code)# In Progress
+│   │       # def oauth_login(provider)# In Progress
+│   │   ├── chart.py          # Functions: #DONE -- awaiting tests
+│   │       # def create_candlestick_chart(data) # DONE
+│   │       # def create_volume_chart(data) # DONE
+│   │       # def create_rsi_chart(data) # DONE
+│   │       # def create_portfolio_chart(portfolio)
+│   │   ├── analysis.py       # Functions:
+│   │       # def calculate_portfolio_beta(portfolio) # in portfolio class, needs to be moved
+│   │       # def generate_recommendations(portfolio) # sprint 5
+│   │       # def analyze_portfolio_risk(portfolio) # sprint 5
+│   │   └── email.py          # Functions:
+│   │       # def send_report(user_email, report_content) # DONE
+│   │       # def send_password_reset(user_email, reset_token) # DONE
+│   │
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── styles.css # In Progress -- moving from html files   
+│   │   ├── js/
+│   │   │   └── app.js        # Core frontend functionality
+│   │   └── images/
+│   │
+│   ├── templates/ # In Progress - completed by sprint 4
+│   │   ├── admin.html        # Admin dashboard template
+│   │   ├── analysis.html     # Analysis dashboard template
+│   │   ├── asset.html        # Asset information page template
+│   │   ├── auth.html         # Authentication page template
+│   │   ├── base.html         # Base template
+│   │   ├── history.html      # Transaction history template
+│   │   ├── index.html        # Home page template
+│   │   ├── market.html       # Market overview template
+│   │   ├── portfolio.html    # User portfolio template
+│   │   └── report.html       # Report generation template
+│   │
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── db.py             # Functions:
+│   │       # def get_connection() # DONE
+│   │       # def execute_query(query, params) # DONE
+│   │       # def log_db_change(table, action, record_id) # DONE
+│   │   └── logger.py         # Functions:
+│   │       # def log_security_event(event_type, details)
+│   │       # def log_api_request(endpoint, method, params)
+│   │
+│   ├── __init__.py           # Functions:
+│   │   # def create_app()
+│   │   # def register_blueprints(app)
+│   │
+│   ├── config.py             # App configuration
+│   └── main.py               # Functions:
+│       # def main()
+│       # def init_db()
+│
+├── tests/
+│   ├── test_api.py           # API endpoint tests
+│   ├── test_models.py        # Data model tests
+│   └── test_services.py      # Service function tests
+│
+├── .gitignore               
+├── requirements.txt          # Python dependencies
+└── README.md                 # Project documentation

@@ -44,20 +44,33 @@
       <p>Configure your portfolio reports and have them delivered directly to your inbox on your preferred schedule.</p>
     </div>
 
+    <!-- Flash Messages (only report-related) -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            {% if category == "report" %}
+              <div class="alert alert-report">{{ message }}</div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
     <div class="report-options">
-      <div class="option-card" onclick="this.classList.toggle('selected')">
+      <div class="option-card" onclick="this.classList.toggle('selected'); document.getElementById('report_type').value='Performance Report'">
         <div class="option-icon"><i class="fas fa-chart-line"></i></div>
         <div class="option-title">Performance Report</div>
         <div class="option-desc">Detailed analysis of your portfolio's performance over time.</div>
       </div>
 
-      <div class="option-card" onclick="this.classList.toggle('selected')">
+      <div class="option-card" onclick="this.classList.toggle('selected'); document.getElementById('report_type').value='Allocation Summary'">
         <div class="option-icon"><i class="fas fa-chart-pie"></i></div>
         <div class="option-title">Allocation Summary</div>
         <div class="option-desc">Breakdown of asset allocation and diversification metrics.</div>
       </div>
 
-      <div class="option-card" onclick="this.classList.toggle('selected')">
+      <div class="option-card" onclick="this.classList.toggle('selected'); document.getElementById('report_type').value='Risk Assessment'">
         <div class="option-icon"><i class="fas fa-balance-scale"></i></div>
         <div class="option-title">Risk Assessment</div>
         <div class="option-desc">Analysis of portfolio risk factors and volatility metrics.</div>
@@ -66,42 +79,48 @@
 
     <div class="report-card">
       <h3>Report Configuration</h3>
-      <form class="report-form">
+      <!-- Changed form to use POST and added name attributes and hidden inputs -->
+      <form class="report-form" method="POST">
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" class="form-control" placeholder="youremail@example.com" required />
+          <input type="email" id="email" name="email" class="form-control" placeholder="youremail@example.com" required />
         </div>
 
         <div class="form-group">
           <label>Report Frequency</label>
           <div class="frequency-selector">
-            <div class="frequency-button" onclick="setActive(this)">Daily</div>
-            <div class="frequency-button active" onclick="setActive(this)">Weekly</div>
-            <div class="frequency-button" onclick="setActive(this)">Monthly</div>
-            <div class="frequency-button" onclick="setActive(this)">Quarterly</div>
+            <div class="frequency-button" onclick="setActive(this); document.getElementById('frequency').value='Daily'">Daily</div>
+            <div class="frequency-button active" onclick="setActive(this); document.getElementById('frequency').value='Weekly'">Weekly</div>
+            <div class="frequency-button" onclick="setActive(this); document.getElementById('frequency').value='Monthly'">Monthly</div>
+            <div class="frequency-button" onclick="setActive(this); document.getElementById('frequency').value='Quarterly'">Quarterly</div>
           </div>
+          <!-- Hidden input to store selected frequency -->
+          <input type="hidden" id="frequency" name="frequency" value="Weekly" />
         </div>
 
         <div class="form-group">
           <label>Report Format</label>
           <div class="checkbox-group">
-            <input type="checkbox" id="pdf" checked />
+            <input type="checkbox" id="pdf" name="pdf" checked />
             <label for="pdf">PDF Document</label>
           </div>
           <div class="checkbox-group">
-            <input type="checkbox" id="excel" />
+            <input type="checkbox" id="excel" name="excel" />
             <label for="excel">Excel Spreadsheet</label>
           </div>
           <div class="checkbox-group">
-            <input type="checkbox" id="csv" />
+            <input type="checkbox" id="csv" name="csv" />
             <label for="csv">CSV Data File</label>
           </div>
         </div>
 
         <div class="form-group">
           <label for="notes">Additional Notes (Optional)</label>
-          <textarea id="notes" class="form-control" rows="3" placeholder="Any specific data or metrics you're interested in..."></textarea>
+          <textarea id="notes" name="notes" class="form-control" rows="3" placeholder="Any specific data or metrics you're interested in..."></textarea>
         </div>
+
+        <!-- Hidden input for report type -->
+        <input type="hidden" id="report_type" name="report_type" value="Performance Report" />
 
         <button type="submit" class="submit-button">
           <i class="fas fa-paper-plane"></i> Schedule My Reports

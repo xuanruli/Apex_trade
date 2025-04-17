@@ -67,13 +67,21 @@ def google_login():
     # Get the authorization endpoint
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
 
-    # Build the request URL
-    request_uri = f"{authorization_endpoint}?{urlencode({
+    # Build the request URL (J.O 4.4 fix)
+    #request_uri = f"{authorization_endpoint}?{urlencode({
+    #    'client_id': GOOGLE_CLIENT_ID,
+    #    'redirect_uri': f"{request.base_url}/callback",
+    #    'response_type': 'code',
+    #    'scope': "https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile"
+    #})}"
+    
+    params = {
         'client_id': GOOGLE_CLIENT_ID,
-        'redirect_uri': f"{request.base_url}/callback",
+        'redirect_uri': f'{request.base_url}/callback',
         'response_type': 'code',
-        'scope': "https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile"
-    })}"
+        'scope': 'https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile'
+    }
+    request_uri = f"{authorization_endpoint}?{urlencode(params)}"
 
     # Redirect to Google's OAuth page
     return redirect(request_uri)
