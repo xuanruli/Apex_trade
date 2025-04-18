@@ -6,3 +6,5 @@ venv/
 *DS_Store.env
 app/db/apex_data.db
 .env
+.idea
+sprint_reports/
