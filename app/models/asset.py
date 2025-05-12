@@ -1,5 +1,7 @@
 import pandas as pd
 from app.services.alpha_vantage import get_time_series_for_stock
+from datetime import datetime
+from app.db import execute_query
 
 class Asset:
     def __init__(self, symbol: str, name: str):
@@ -67,3 +69,38 @@ class Asset:
         df = df[['open', 'high', 'low', 'close', 'volume']]
         df = df.sort_index()
         return df
+
+    @staticmethod
+    def get_one_year_price_db(portfolio_symbols):
+        # portfolio symbols is a list
+        now = datetime.now()
+        one_year_ago = now.replace(year=now.year - 1)
+        date_str = one_year_ago.strftime("%Y-%m-%d")
+        frames = []
+        query = """SELECT DISTINCT stock_symbol FROM stock_data_daily"""
+        result = execute_query(query, ())
+        print(len(result))
+        for symbol in portfolio_symbols:
+            query = """SELECT closing_date, close_price FROM stock_data_daily WHERE stock_symbol = %s AND closing_date >= %s ORDER BY closing_date"""
+            result = execute_query(query, (symbol, date_str))
+            if not result:
+
+                continue
+            temp_df = pd.DataFrame(result)
+            temp_df['closing_date'] = pd.to_datetime(temp_df['closing_date'])
+            temp_df = temp_df.set_index('closing_date')
+            temp_df = temp_df.rename(columns={'close_price': symbol})
+            frames.append(temp_df)
+
+        if frames:
+            df = pd.concat(frames, axis=1)
+            df.index.name = None
+        else:
+            df = pd.DataFrame()
+        return df
+
+
+
+
+
+

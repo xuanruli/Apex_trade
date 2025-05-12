@@ -53,13 +53,18 @@ class TestUser(unittest.TestCase):
         result = User.get_by_email("missing@example.com")
         self.assertIsNone(result)
 
-    @patch('app.models.user.execute_update')
-    def test_update_password(self, mock_update):
+    @patch("app.models.user.execute_update")
+    def test_change_password(self, mock_update):
         user = User("testuser", "test@example.com", "Test", "User", "oldpass")
         user._id = 1
-        user.update_password("newpass123")
+
+        user.change_password(1, "newpass123")
+
         mock_update.assert_called_once()
-        self.assertTrue(check_password_hash(user._password_hash, "newpass123"))
+        _, params = mock_update.call_args[0]  # (query, params)
+        new_hash, uid = params
+        self.assertEqual(uid, 1)
+        self.assertTrue(check_password_hash(new_hash, "newpass123"))
 
     @patch('app.models.user.execute_query')
     def test_check_password_correct(self, mock_query):

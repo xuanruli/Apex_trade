@@ -21,7 +21,7 @@ class Portfolio:
         """
         Load the user's holdings from the 'portfolio' table into self._holdings.
         """
-        query = """SELECT stock_symbol, total_shares, cost_basis FROM portfolio WHERE user_id = ? """
+        query = """SELECT stock_symbol, total_shares, cost_basis FROM portfolio WHERE user_id = %s """
         rows = execute_query(query, (self._user_id,))
         for row in rows:
             symbol = row['stock_symbol']
@@ -34,7 +34,7 @@ class Portfolio:
         old_shares, old_cost = self._holdings.get(symbol, (0, 0))
         order_cost = quantity * price
         if (old_shares, old_cost) == (0, 0):
-            query = """INSERT INTO portfolio (user_id, stock_symbol, total_shares, cost_basis) VALUES (?, ?, ?, ?)"""
+            query = """INSERT INTO portfolio (user_id, stock_symbol, total_shares, cost_basis) VALUES (%s, %s, %s, %s)"""
             execute_update(query, (self._user_id, symbol, quantity, order_cost))
             logger.info(f"[PORTFOLIO] - user {self._user_id} {order_type} {quantity} of {symbol} with {price} and this is the new holding cost")
             return True
@@ -47,13 +47,13 @@ class Portfolio:
             new_cost = old_cost - old_price * quantity
             new_shares = old_shares - quantity
             if new_shares == 0:
-                query = """DELETE FROM portfolio WHERE user_id = ? AND stock_symbol = ?"""
+                query = """DELETE FROM portfolio WHERE user_id = %s AND stock_symbol = %s"""
                 execute_update(query, (self._user_id, symbol,))
                 return True
         else:
             raise ValueError("incorrect order type")
 
-        query = """UPDATE portfolio SET total_shares = ?, cost_basis = ? WHERE user_id = ? AND stock_symbol = ?"""
+        query = """UPDATE portfolio SET total_shares = %s, cost_basis = %s WHERE user_id = %s AND stock_symbol = %s"""
         execute_update(query, (new_shares, new_cost, self._user_id, symbol,))
 
         logger.info(f"[PORTFOLIO] - user {self._user_id} {order_type} {quantity} of {symbol} with {price} and now user new holding cost for {symbol} is {new_cost} and {new_shares} shares")
@@ -67,7 +67,7 @@ class Portfolio:
         total_value, total_holdings, total_cost = 0.0, 0, 0.0
 
         for symbol, (shares, cost_basis) in self._holdings.items():
-            query = """SELECT close_price FROM stock_data_hourly WHERE stock_symbol = ? ORDER BY closing_date DESC LIMIT 1 """
+            query = """SELECT close_price FROM stock_data_hourly WHERE stock_symbol = %s ORDER BY closing_date DESC LIMIT 1 """
             row = execute_query(query, (symbol,))
             if row:
                 total_value += (row[0]['close_price'] * shares)
@@ -86,7 +86,7 @@ class Portfolio:
         portfolio_summary = []
 
         for symbol, (shares, cost_basis) in self._holdings.items():
-            query = """SELECT close_price FROM stock_data_hourly WHERE stock_symbol = ? ORDER BY closing_date DESC LIMIT 1"""
+            query = """SELECT close_price FROM stock_data_hourly WHERE stock_symbol = %s ORDER BY closing_date DESC LIMIT 1"""
             price_result = execute_query(query, (symbol,))
 
             if price_result:
@@ -111,7 +111,7 @@ class Portfolio:
 
     @staticmethod
     def check_portfolio(user_id):
-        query = """SELECT COUNT(*) as count FROM portfolio WHERE user_id = ?"""
+        query = """SELECT COUNT(*) as count FROM portfolio WHERE user_id = %s"""
         result = execute_query(query,(user_id,))
         if result[0]['count'] == 0:
             return False
@@ -129,7 +129,7 @@ class Portfolio:
         """
         Get a specific holding from a user's portfolio.
         """
-        query = """ SELECT total_shares, cost_basis FROM portfolio WHERE user_id = ? AND stock_symbol = ?"""
+        query = """ SELECT total_shares, cost_basis FROM portfolio WHERE user_id = %s AND stock_symbol = %s"""
         result = execute_query(query, (user_id, symbol))
 
         if result:
@@ -143,7 +143,7 @@ class Portfolio:
 
         :return: A list of user_ids that have portfolios
         """
-        query = """ SELECT DISTINCT user_id FROM portfolio"""
+        query = """ SELECT * FROM portfolio"""
         result = execute_query(query, ())
-        return [row['user_id'] for row in result]
+        return result
 

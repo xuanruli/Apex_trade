@@ -13,11 +13,10 @@
     <nav class="navbar">
         <div class="navbar-left">
             <a class="navbar-brand" href="/">
-                <img src="{{ url_for('static', filename='Logo1.png') }}" alt="Logo" />
+                <img src="{{ url_for('static', filename='Logo1.png') }}" alt="Company Logo"><span>Apex Trading</span>
             </a>
             <div class="navbar-menu">
                 <a href="{{ url_for('api.asset') }}">Assets</a>
-                <a href="{{ url_for('api.portfolio') }}">Portfolio</a>
                 <a href="{{ url_for('api.news') }}">News</a>
                 <a href="/about">About Us</a>
             </div>
@@ -31,7 +30,7 @@
             </div>
         </div>
         <div class="navbar-buttons">
-            <span class="welcome-text">{{ session.get('username') }} ｜{{ session.get('name') }} </span>
+            <span class="welcome-text"><a href="{{ url_for('api.portfolio') }}">{{ session.get('username') }} ｜{{ session.get('name') }} </a></span>
             <a href="{{ url_for('api.logout') }}" class="btn-signup">Logout</a>
         </div>
     </nav>
@@ -61,9 +60,9 @@
                             <th>Total</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="transactionTableBody">
                         {% for tx in transactions %}
-                        <tr>
+                        <tr class="transaction-row" data-page="{{loop.index0 // 10 + 1}}">
                             <td>{{ tx.transaction_date }}</td>
                             <td>{{ tx.stock_symbol }}</td>
                             <td>
@@ -74,7 +73,7 @@
                             <td>{{ tx.shares }}</td>
                             <td>${{ "%.2f"|format(tx.price) }}</td>
                             <td class="{% if tx.transaction_type == 'buy' %}transaction-buy{% else %}transaction-sell{% endif %}">
-                                ${{ "%.2f"|format(tx.total|abs) }}
+                                ${{ "%.2f"|format(tx.total) }}
                             </td>
                         </tr>
                         {% endfor %}
@@ -83,18 +82,77 @@
             </div>
 
             {% if transactions|length > 10 %}
-            <div class="pagination-container">
-                <button class="pagination-button">Previous</button>
-                <button class="pagination-button active">1</button>
-                <button class="pagination-button">2</button>
-                <button class="pagination-button">3</button>
-                <button class="pagination-button">Next</button>
-            </div>
+                <div class="pagination-container">
+                    <button id="prevBtn" class="pagination-button">Previous</button>
+                    <div id="pageButtons">
+
+                    </div>
+                    <button id="nextBtn" class="pagination-button">Next</button>
+                </div>
             {% endif %}
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
 
-    <footer class="footer">
+            if ({{ transactions|length }} > 10) {
+                initPagination();
+            }
+
+            function initPagination() {
+                const rows = document.querySelectorAll('#transactionTableBody .transaction-row');
+                const totalPages = Math.ceil(rows.length / 10);
+                let currentPage = 1;
+
+                const pageButtonsContainer = document.getElementById('pageButtons');
+                pageButtonsContainer.innerHTML = '';
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.className = 'pagination-button' + (i === 1 ? ' active' : '');
+                    pageBtn.textContent = i;
+                    pageBtn.addEventListener('click', function() {
+                        goToPage(i);
+                    });
+                    pageButtonsContainer.appendChild(pageBtn);
+                }
+
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+
+                prevBtn.addEventListener('click', function() {
+                    if (currentPage > 1) {
+                        goToPage(currentPage - 1);
+                    }
+                });
+
+                nextBtn.addEventListener('click', function() {
+                    if (currentPage < totalPages) {
+                        goToPage(currentPage + 1);
+                    }
+                });
+
+                goToPage(1);
+
+                function goToPage(pageNum) {
+                    currentPage = pageNum;
+
+                    document.querySelectorAll('#pageButtons .pagination-button').forEach((btn, index) => {
+                        btn.classList.toggle('active', index + 1 === currentPage);
+                    });
+
+                    prevBtn.disabled = currentPage === 1;
+                    nextBtn.disabled = currentPage === totalPages;
+
+                    rows.forEach(row => {
+                        const rowPage = parseInt(row.dataset.page);
+                        row.style.display = rowPage === currentPage ? '' : 'none';
+                    });
+                }
+            }
+        });
+        </script>
+    <footer class="footer gradient-background">
         &copy; 2025 Apex Trading Platform. All Rights Reserved.
     </footer>
 </body>

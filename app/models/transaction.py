@@ -36,8 +36,8 @@ class Transaction:
         if self._id is not None:
             # Update existing transaction
             query = """
-                UPDATE transactions SET user_id = ?, stock_symbol = ?, shares = ?, price_per_share = ?, transaction_type = ?, transaction_date = ?
-                WHERE id = ?
+                UPDATE transactions SET user_id = %s, stock_symbol = %s, shares = %s, price_per_share = %s, transaction_type = %s, transaction_date = %s
+                WHERE id = %s
             """
             execute_update(query, (self._user_id, self._stock_symbol, self._shares, self._price_per_share, self._transaction_type, self._transaction_date, self._id))
             logger.info(f"[TRANSACTION] - Updated transaction {self._id}")
@@ -45,13 +45,13 @@ class Transaction:
             # Insert a new transaction
             query = """
                 INSERT INTO transactions (user_id, stock_symbol, shares, price_per_share, transaction_type, transaction_date)
-                VALUES (?, ?, ?, ?, ?, ?)
+                VALUES (%s, %s, %s, %s, %s, %s)
             """
             execute_update(query, (self._user_id, self._stock_symbol, self._shares, self._price_per_share, self._transaction_type, self._transaction_date))
             logger.info(f"[TRANSACTION] - Inserted new transaction for user {self._user_id}")
 
             # Retrieve the newly assigned ID
-            sel_query = """SELECT id FROM transactions WHERE user_id = ? AND stock_symbol = ? ORDER BY id DESC LIMIT 1"""
+            sel_query = """SELECT id FROM transactions WHERE user_id = %s AND stock_symbol = %s ORDER BY id DESC LIMIT 1"""
             result = execute_query(sel_query, (self._user_id, self._stock_symbol))
             if result:
                 self._id = result[0]['id']
@@ -63,7 +63,7 @@ class Transaction:
         """
         query = """
             SELECT id, user_id, stock_symbol, shares, price_per_share, transaction_type, transaction_date
-            FROM transactions WHERE user_id = ? ORDER BY transaction_date ASC
+            FROM transactions WHERE user_id = %s ORDER BY transaction_date ASC
         """
         rows = execute_query(query, (user_id,))
         transactions = []
@@ -82,11 +82,17 @@ class Transaction:
         return transactions
 
     @staticmethod
+    def get_all_user_transactions():
+        query = """ SELECT * FROM transactions"""
+        result = execute_query(query, ())
+        return result
+
+    @staticmethod
     def get_transaction_by_id(transaction_id):
         """
         Find a single transaction by its primary key ID.
         """
-        query = """SELECT id, user_id, stock_symbol, shares, price_per_share, transaction_type, transaction_date FROM transactions WHERE id = ?"""
+        query = """SELECT id, user_id, stock_symbol, shares, price_per_share, transaction_type, transaction_date FROM transactions WHERE id = %s"""
         rows = execute_query(query, (transaction_id,))
         if rows:
             row = rows[0]
@@ -116,7 +122,7 @@ class Transaction:
                 transaction_type,
                 transaction_date
             FROM transactions
-            WHERE user_id = ? AND stock_symbol = ?
+            WHERE user_id = %s AND stock_symbol = %s
             ORDER BY transaction_date ASC
         """
         rows = execute_query(query, (user_id, stock_symbol))
@@ -133,17 +139,3 @@ class Transaction:
             )
             transactions.append(tx)
         return transactions
-
-    def to_dict(self):
-        """
-        Convert transaction object to a dictionary
-        """
-        return {
-            'id': self._id,
-            'user_id': self._user_id,
-            'stock_symbol': self._stock_symbol,
-            'shares': self._shares,
-            'price_per_share': self._price_per_share,
-            'transaction_type': self._transaction_type,
-            'transaction_date': self._transaction_date
-        }

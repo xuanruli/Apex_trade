@@ -5,3 +5,8 @@ plotly
 python-dotenv
 Requests
 gunicorn
+mysql-connector-python
+validate-email
+Flask-Mail
+weasyprint
+pytest

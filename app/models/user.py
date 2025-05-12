@@ -16,7 +16,7 @@ class User:
     @staticmethod
     def get_by_username(username):
         """get user info by username"""
-        query = "SELECT id, username, email, firstname, lastname, password_hash FROM users WHERE username = ?"
+        query = "SELECT id, username, email, firstname, lastname, password_hash FROM users WHERE username = %s"
         result = execute_query(query, (username,))
 
         if result:
@@ -27,7 +27,7 @@ class User:
     @staticmethod
     def get_by_email(email):
         """get user info by email if user forget password"""
-        query = "SELECT id, username, email, firstname, lastname, password_hash FROM users WHERE email = ?"
+        query = "SELECT id, username, email, firstname, lastname, password_hash FROM users WHERE email = %s"
         result = execute_query(query, (email,))
 
         if result:
@@ -41,34 +41,26 @@ class User:
         function 2: complete user.id property
         """
         if self._id: #update
-            query = """UPDATE users SET username=?, email=?, firstname=?, lastname=?, password_hash=? WHERE id=?"""
+            query = """UPDATE users SET username=%s, email=%s, firstname=%s, lastname=%s, password_hash=%s WHERE id=%s"""
             execute_update(query, (self._id, self._username, self._email,
                                   self._firstname, self._lastname, self._password_hash))
             logger.info("[DATABASE] - user update info")
 
         else:  # complete user.id for new user
-            query = """INSERT INTO users (username, email, firstname, lastname, password_hash) VALUES (?, ?, ?, ?, ?)"""
+            query = """INSERT INTO users (username, email, firstname, lastname, password_hash) VALUES (%s, %s, %s, %s, %s)"""
             execute_update(query, (self._username, self._email,
                                   self._firstname, self._lastname, self._password_hash))
             logger.info(f"[DATABASE] - new user added {self._username}")
 
-            query = "SELECT id FROM users WHERE email = ?"
+            query = "SELECT id FROM users WHERE email = %s"
             result = execute_query(query, (self._email,))
             if result:
                 self._id = result[0]['id']
 
-    def update_password(self, password):
-        """update password into hash"""
-        self._password_hash = generate_password_hash(password)
-        if self._id:
-            query = "UPDATE users SET password_hash = ? WHERE id = ?"
-            execute_update(query, (self._password_hash, self._id))
-            logger.info("[DATABASE] - update password")
-
     @staticmethod
     def check_password(username, password):
         """check password"""
-        query = "SELECT username, email, firstname, lastname, password_hash FROM users WHERE username = ?"
+        query = "SELECT username, email, firstname, lastname, password_hash FROM users WHERE username = %s"
         result = execute_query(query, (username,))
         if not result:
             logger.info("[USER] - user update info")
@@ -76,5 +68,28 @@ class User:
         password_hash = result[0]['password_hash']
 
         return check_password_hash(password_hash, password)
+
+    @staticmethod
+    def change_password(user_id, new_password):
+        password_hash = generate_password_hash(new_password)
+        query = "UPDATE users SET password_hash = %s WHERE id = %s"
+        execute_update(query, (password_hash, user_id))
+        logger.info("[DATABASE] - update password")
+
+    @staticmethod
+    def delete_user(user_id):
+        query = "DELETE FROM users WHERE id = %s"
+        execute_update(query, (user_id,))
+        logger.info(f"[DATABASE] - user{user_id} was deleted")
+
+    @staticmethod
+    def get_all_users():
+        """
+        Get all user in the system.
+        """
+        query = """ SELECT * FROM users"""
+        result = execute_query(query, ())
+        return result
+
 
 

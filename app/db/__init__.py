@@ -1,9 +1,6 @@
-import sqlite3
+import mysql.connector
 from .schema import setup_database
 from .data_loader import process_all_stocks
-import os
-app_root = os.path.dirname(os.path.dirname(__file__))
-DB_PATH = os.path.join(app_root, 'db/apex_data.db')
 
 def initialize_database():
     print("Database Init Start")
@@ -12,7 +9,8 @@ def initialize_database():
     print("Database Init Complete")
 
 def get_db_connection():
-    conn = sqlite3.connect(DB_PATH)
+    from .schema import DB_CONFIG
+    conn = mysql.connector.connect(**DB_CONFIG)
     return conn
 
 def execute_query(query, params=()):
@@ -22,16 +20,12 @@ def execute_query(query, params=()):
     """
     conn = get_db_connection()
     try:
-        cursor = conn.cursor()
+        cursor = conn.cursor(dictionary=True)
         cursor.execute(query, params)
-
-        columns = [desc[0] for desc in cursor.description]
-        result = []
-        for row in cursor.fetchall():
-            result.append(dict(zip(columns, row)))
-
+        result = cursor.fetchall()
         return result
     finally:
+        cursor.close()
         conn.close()
 
 def execute_update(query, params=()):
@@ -45,4 +39,5 @@ def execute_update(query, params=()):
         conn.commit()
         return cursor.rowcount
     finally:
+        cursor.close()
         conn.close()

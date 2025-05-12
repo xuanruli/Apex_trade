@@ -1,114 +1,125 @@
+import datetime as _dt
+import time
+from typing import Iterable, Mapping, Set
+
+import pandas as pd
 import requests
 import sqlite3
-import time
+
 from app.logger import logger
-import os
+from .schema import DB_CONFIG
 from app.services.alpha_vantage import get_time_series_for_stock, get_stock_info
 
-app_root = os.path.dirname(os.path.dirname(__file__))
-DB_PATH = os.path.join(app_root, 'db/apex_data.db')
 
-
-def fetch_nasdaq_100():
-    """Web scraping to get NASDAQ-100 symbols"""
+def fetch_nasdaq_100() -> Set[str]:
     url = "https://www.slickcharts.com/nasdaq100"
-
     headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+        "User-Agent": (
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+        )
     }
+    response = requests.get(url, headers=headers, timeout=15)
+    response.raise_for_status()
+    table = pd.read_html(response.text)[0]
+    symbols_series = table["Symbol"]
+    if not hasattr(symbols_series, "str"):
+        symbols_series = pd.Series(symbols_series)
+    return set(symbols_series.astype(str).str.strip().str.upper())
 
-    response = requests.get(url, headers=headers)
-    import pandas as pd
-    tables = pd.read_html(response.text)[0]['Symbol']
-    return set(tables)
 
-def store_stocks_in_db(stocks):
-    """store stock information in stock_info table"""
-    conn = sqlite3.connect(DB_PATH)
+def _now_iso() -> str:
+    return _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
+
+
+def _get_connection():
+    if "database" in DB_CONFIG and len(DB_CONFIG) == 1:
+        return sqlite3.connect(DB_CONFIG["database"])
+    return sqlite3.connect(DB_CONFIG.get("database", ":memory:"))
+
+
+def store_stocks_in_db(stocks: Iterable[Mapping[str, str]]) -> None:
+    conn = _get_connection()
     cursor = conn.cursor()
-
     try:
-        import datetime
-        now = datetime.datetime.now().isoformat()
-
         for stock in stocks:
-            cursor.execute("""
-                INSERT OR REPLACE INTO stock_info 
-                (symbol, name, exchange, asset_type, ipoDate, delistingDate, status, last_updated)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """, (
-                stock.get('symbol', ''),
-                stock.get('name', ''),
-                stock.get('exchange', ''),
-                stock.get('assetType', ''),
-                stock.get('ipoDate', ''),
-                stock.get('delistingDate', ''),
-                stock.get('status\r', ''),
-                now
-            ))
+            cursor.execute(
+                """
+                REPLACE INTO stock_info
+                    (symbol, name, exchange, asset_type,
+                     ipoDate, delistingDate, status, last_updated)
+                VALUES (?,?,?,?,?,?,?,?)
+                """,
+                (
+                    stock.get("symbol", ""),
+                    stock.get("name", ""),
+                    stock.get("exchange", ""),
+                    stock.get("assetType", ""),
+                    stock.get("ipoDate", ""),
+                    stock.get("delistingDate", ""),
+                    stock.get("status", ""),
+                    _now_iso(),
+                ),
+            )
         conn.commit()
         logger.info("[TABLE FINISHED COMMIT] - stock_info")
-
-    except Exception as e:
-        print(f"store stock data fail: {str(e)}")
     finally:
+        cursor.close()
         conn.close()
 
 
-def store_time_series_in_db(symbol, time_series_data, interval='daily'):
-    """store all time series into stock_data table"""
+def store_time_series_in_db(
+    symbol: str,
+    time_series_data: Mapping[str, Mapping[str, str]],
+    interval: str = "daily",
+) -> None:
     if not time_series_data:
         return
-
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_connection()
     cursor = conn.cursor()
-
     try:
-        for date, daily_data in time_series_data.items():
-            adj_close = float(daily_data['4. close']) if interval == "hourly" else float(daily_data.get('5. adjusted close'))
-            volume = int(daily_data['5. volume'], 0) if interval == "hourly" else int(daily_data['6. volume'], 0)
-            cursor.execute(f"""
-                INSERT OR REPLACE INTO stock_data_{interval}
-                (stock_symbol, closing_date, open_price, high_price, low_price, close_price, adj_close_price, volume)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """, (
-                symbol,
-                date,
-                float(daily_data['1. open']),
-                float(daily_data['2. high']),
-                float(daily_data['3. low']),
-                float(daily_data['4. close']),
-                adj_close,
-                volume
-            ))
-
+        table_name = f"stock_data_{interval}"
+        volume_key = "5. volume" if interval == "hourly" else "6. volume"
+        for date, row in time_series_data.items():
+            open_p = float(row["1. open"])
+            high_p = float(row["2. high"])
+            low_p = float(row["3. low"])
+            close_p = float(row["4. close"])
+            adj_close = float(row.get("5. adjusted close", close_p))
+            vol_raw = (
+                row.get(volume_key)
+                or row.get("6. volume")
+                or row.get("5. volume")
+                or "0"
+            )
+            volume = int(str(vol_raw).replace(",", ""))
+            cursor.execute(
+                f"""
+                REPLACE INTO {table_name}
+                    (stock_symbol, closing_date, open_price, high_price,
+                     low_price, close_price, adj_close_price, volume)
+                VALUES (?,?,?,?,?,?,?,?)
+                """,
+                (symbol, date, open_p, high_p, low_p, close_p, adj_close, volume),
+            )
         conn.commit()
-
-        print(f"store {symbol} successfully")
-    except Exception as e:
-        print(f"store {symbol} fail: {str(e)}")
+        logger.info("Stored %s rows in %s", symbol, table_name)
     finally:
+        cursor.close()
         conn.close()
 
 
-def process_all_stocks(delay=0.3):
-    """"""
-    stocks = get_stock_info()
-    if stocks:
-        store_stocks_in_db(stocks)
-
-    # get nasdaq_100_stock
-    nasdaq_100_stock = fetch_nasdaq_100()
-
-    # iterate list for three types of data
-    interval_list = ['daily', 'hourly', 'monthly']
-    for interval in interval_list:
-        for i, symbol in enumerate(nasdaq_100_stock):
-            print(f"ready to deal with {interval}'s {i+1}th stock: {symbol}")
-            time_series = get_time_series_for_stock(symbol, interval=interval)
-            if time_series:
-                store_time_series_in_db(symbol, time_series, interval=interval)
-                print(f"wait {delay} second for API limit")
+def process_all_stocks(delay: float = 0.3) -> None:
+    stocks_meta = get_stock_info()
+    if stocks_meta:
+        store_stocks_in_db(stocks_meta)
+    nasdaq_100_symbols = fetch_nasdaq_100()
+    intervals = ("daily", "hourly", "monthly")
+    for interval in intervals:
+        for i, symbol in enumerate(sorted(nasdaq_100_symbols), start=1):
+            logger.info("Processing %s (%s /%d)", symbol, interval, i)
+            series = get_time_series_for_stock(symbol, interval=interval)
+            if series:
+                store_time_series_in_db(symbol, series, interval=interval)
                 time.sleep(delay)
-        logger.info(f"[TABLE FINISHED COMMIT] - stock_data{interval}")
-
+        logger.info("[TABLE FINISHED COMMIT] - stock_data_%s", interval)

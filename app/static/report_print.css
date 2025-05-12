@@ -1,0 +1,41 @@
+/* static/css/report_print.css  */
+@page { size: A4 portrait; margin: 20mm 15mm; }
+
+@media print {
+  body {
+    font: 12pt/1.45 "Helvetica Neue", Arial, sans-serif;
+    color: #1f2937;
+  }
+
+  .navbar,
+  .btn-login,
+  .btn-signup,
+  .btn-get-report,
+  .btn-analysis,
+  .search-container {
+    display: none !important;
+  }
+
+  .portfolio-container,
+  .portfolio-sidebar,
+  .portfolio-content,
+  .row,
+  .card,
+  [class^="col-"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  table,
+  svg,
+  .performance-card {
+    page-break-inside: avoid;
+  }
+
+  .card { margin: 0 0 12pt; padding: 0; border: none; box-shadow: none; }
+
+  footer.footer { display: none; }
+}

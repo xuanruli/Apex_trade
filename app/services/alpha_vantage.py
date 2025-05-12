@@ -99,8 +99,17 @@ def get_time_series_for_stock(symbol, interval="daily"):
 
         if key_map[interval] in data:
             time_series = data[key_map[interval]]
-            dates = sorted(time_series.keys(), reverse=True)  # sorted date, can be removed
-            sorted_time_series = {date: time_series[date] for date in dates}
+
+            from datetime import datetime
+            filtered_time_series = {}
+            for date_str, values in time_series.items():
+                date_format = "%Y-%m-%d" if interval != "hourly" else "%Y-%m-%d %H:%M:%S"
+                date_obj = datetime.strptime(date_str, date_format)
+                if date_obj.weekday() < 5:
+                    filtered_time_series[date_str] = values
+
+            dates = sorted(filtered_time_series.keys(), reverse=True)
+            sorted_time_series = {date: filtered_time_series[date] for date in dates}
             return sorted_time_series
         else:
             print(f"error: {data}")

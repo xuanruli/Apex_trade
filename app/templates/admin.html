@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Echelon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='portfolio.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='Logo1.png') }}" alt="Company Logo"><span>Apex Trading</span>
+            </a>
+            <div class="navbar-menu">
+                <a href="{{ url_for('api.asset') }}">Assets</a>
+                <a href="{{ url_for('api.news') }}">News</a>
+                <a href="/about">About Us</a>
+            </div>
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="search" placeholder="Search symbol or site..." class="search-input">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="navbar-buttons">
+            <span class="welcome-text"><a href="{{ url_for('api.portfolio') }}">{{ session.get('username') }} ｜{{ session.get('name') }}</a></span>
+            <a href="{{ url_for('api.logout') }}" class="btn-signup">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Portfolio Container Structure -->
+    <div class="portfolio-container">
+        <!-- Left Sidebar with Admin Statistics -->
+        <div class="portfolio-sidebar">
+            <div class="stats-header">
+                <h3>Admin Dashboard</h3>
+                <button class="refresh-button" onclick="window.location.reload()">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+            <div class="stat-item">
+                <div class="stat-name">Total Users</div>
+                <div class="stat-value">{{ users|length }}</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-name">Total Transactions</div>
+                <div class="stat-value">{{ transactions|length }}</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-name">Admin</div>
+                <div class="stat-value">{{ session.get('name') }}</div>
+            </div>
+
+        </div>
+
+        <!-- Right Content Area -->
+        <div class="portfolio-content">
+            <div class="flash-messages-container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab('users')">Users</button>
+                <button class="tab-button" onclick="openTab('transactions')">Transactions</button>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="users-tab" class="tab-content active">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>User Management</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="holdings-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Username</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id = 'userTableBody'>
+                                {% for user in users %}
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td><span class="symbol">{{ user.username }}</span></td>
+                                    <td>{{ user.firstname }} {{ user.lastname }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td class="action-buttons">
+                                        <button class="btn-change-password" onclick="openPasswordModal({{ user.id }})">
+                                            <i class="fas fa-key"></i> Change Password
+                                        </button>
+                                        <button class="btn-delete" onclick="openDeleteModal({{ user.id }}, '{{ user.username }}')">
+                                            <i class="fas fa-trash"></i> Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% if users|length > 10 %}
+                <div class="pagination-container">
+                    <button id="userPrevBtn" class="pagination-button">Previous</button>
+                    <div id="userPageButtons">
+                    </div>
+                    <button id="userNextBtn" class="pagination-button">Next</button>
+                </div>
+            {% endif %}
+
+            <!-- Transactions Tab -->
+            <div id="transactions-tab" class="tab-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Transaction Records</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="holdings-table">
+                            <thead>
+                                <tr>
+                                    <th>User_ID</th>
+                                    <th>Date</th>
+                                    <th>Symbol</th>
+                                    <th>Type</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for tx in transactions %}
+                                <tr class="transaction-row" data-page="{{loop.index0 // 10 + 1}}">
+                                    <td>{{ tx.user_id }}</td>
+                                    <td>{{ tx.stock_symbol }}</td>
+                                    <td>{{ tx.transaction_date }}</td>
+                                    <td>{{ tx.shares }}</td>
+                                    <td>${{ "%.2f"|format(tx.price_per_share) }}</td>
+                                    <td>
+                                        <span class="transaction-badge {% if tx.transaction_type == 'buy' %}badge-buy{% else %}badge-sell{% endif %}">
+                                            {{ tx.transaction_type|upper }}
+                                        </span>
+                                    </td>
+                                    <td class="{% if tx.transaction_type == 'buy' %}transaction-buy{% else %}transaction-sell{% endif %}">
+                                        ${{ "%.2f"|format(tx.shares * tx.price_per_share) if tx.transaction_type == 'buy' else  "%.2f"|format(-tx.shares * tx.price_per_share) }}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                {% if transactions|length > 10 %}
+                    <div class="pagination-container">
+                        <button id="prevBtn" class="pagination-button">Previous</button>
+                        <div id="pageButtons">
+                        </div>
+                        <button id="nextBtn" class="pagination-button">Next</button>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Change Password</h4>
+                <button class="close-button" onclick="closeModal('password-modal')">&times;</button>
+            </div>
+            <form id="changePasswordForm">
+                <input type="hidden" id="password-user-id" name="user_id">
+                <div class="input-group">
+                    <label for="new-password">New Password</label>
+                    <div class="password-field">
+                        <input type="password" id="new-password" class="form-control" required>
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('new-password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="password-field">
+                        <input type="password" id="confirm-password" class="form-control" required>
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('confirm-password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                    <button type="button" class="btn-login" onclick="closeModal('password-modal')">Cancel</button>
+                    <button type="submit" class="btn-signup">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Delete User Modal -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Delete User</h4>
+                <button class="close-button" onclick="closeModal('delete-modal')">&times;</button>
+            </div>
+            <p>Are you sure you want to delete user <span id="delete-username" class="symbol"></span>? This action cannot be undone.</p>
+            <form id="deleteUserForm">
+                <input type="hidden" id="delete-user-id">
+                <input type="hidden" id="delete-username">
+                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                    <button type="button" class="btn-login" onclick="closeModal('delete-modal')">Cancel</button>
+                    <button type="submit" class="btn-delete">Delete User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        if ({{ transactions|length }} > 10) {
+            initPagination('transaction');
+        }
+
+        if ({{ users|length }} > 10) {
+            initPagination('user');
+        }
+
+        document.getElementById('changePasswordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const userId = document.getElementById('password-user-id').value;
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (newPassword !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            if (!isPasswordValid(confirmPassword)) {
+                event.preventDefault();
+                alert("Password not valid. Please try again");
+                return;
+            }
+
+            const jsonData = {
+                user_id: userId,
+                new_password: newPassword
+            };
+
+            fetch('/admin/change-password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message || 'Password changed successfully!');
+                    closeModal('password-modal');
+                } else {
+                    alert(data.message || 'Failed to change password. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while changing the password. Please try again.');
+            });
+        });
+
+        // Delete user restful api
+        const deleteUserForm = document.querySelector('#delete-modal form');
+        if (deleteUserForm) {
+            deleteUserForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const userId = document.getElementById('delete-user-id').value;
+                const username = document.getElementById('delete-username').textContent;
+
+                const jsonData = {
+                    user_id: userId,
+                    username: username
+                };
+
+                fetch('/admin/delete', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message || 'User deleted successfully!');
+                        closeModal('delete-modal');
+                        window.location.reload();
+                    } else {
+                        alert(data.message || 'Failed to delete user. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while deleting the user. Please try again.');
+                });
+            });
+        }
+
+        // Pagination functionality
+        function initPagination(type) {
+            // Define selectors for different pagination areas
+            const selectors = {
+                'transaction': {
+                    rows: '.holdings-table .transaction-row',
+                    pageButtons: 'pageButtons',
+                    prevBtn: 'prevBtn',
+                    nextBtn: 'nextBtn'
+                },
+                'user': {
+                    rows: '.holdings-table .user-row',
+                    pageButtons: 'userPageButtons',
+                    prevBtn: 'userPrevBtn',
+                    nextBtn: 'userNextBtn'
+                }
+            };
+
+            const currentSelectors = selectors[type];
+            const rows = document.querySelectorAll(currentSelectors.rows);
+            const totalPages = Math.ceil(rows.length / 10);
+            let currentPage = 1;
+
+            // Skip if no pages to display
+            if (totalPages <= 0) return;
+
+            const pageButtonsContainer = document.getElementById(currentSelectors.pageButtons);
+            if (!pageButtonsContainer) return;
+
+            pageButtonsContainer.innerHTML = '';
+
+            // Create page buttons
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-button' + (i === 1 ? ' active' : '');
+                pageBtn.textContent = i;
+                pageBtn.addEventListener('click', function() {
+                    goToPage(i);
+                });
+                pageButtonsContainer.appendChild(pageBtn);
+            }
+
+            const prevBtn = document.getElementById(currentSelectors.prevBtn);
+            const nextBtn = document.getElementById(currentSelectors.nextBtn);
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    if (currentPage > 1) {
+                        goToPage(currentPage - 1);
+                    }
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    if (currentPage < totalPages) {
+                        goToPage(currentPage + 1);
+                    }
+                });
+            }
+
+            goToPage(1);
+
+            function goToPage(pageNum) {
+                currentPage = pageNum;
+
+                const pageButtons = document.querySelectorAll(`#${currentSelectors.pageButtons} .pagination-button`);
+                pageButtons.forEach((btn, index) => {
+                    btn.classList.toggle('active', index + 1 === currentPage);
+                });
+
+                if (prevBtn) prevBtn.disabled = currentPage === 1;
+                if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+
+                rows.forEach(row => {
+                    const rowPage = parseInt(row.dataset.page);
+                    row.style.display = rowPage === currentPage ? '' : 'none';
+                });
+            }
+        }
+
+        function openTab(tabName, event) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+
+            // Show the selected tab content
+            document.getElementById(tabName + '-tab').classList.add('active');
+
+            // Add active class to the clicked button
+            if (event) {
+                event.currentTarget.classList.add('active');
+            }
+        }
+
+        // Make tab function available globally
+        window.openTab = openTab;
+
+        // Modal functions
+        function openPasswordModal(userId) {
+            document.getElementById('password-user-id').value = userId;
+            document.getElementById('new-password').value = '';
+            document.getElementById('confirm-password').value = '';
+            document.getElementById('password-modal').style.display = 'block';
+        }
+
+        function openDeleteModal(userId, username) {
+            document.getElementById('delete-user-id').value = userId;
+            document.getElementById('delete-username').textContent = username;
+            document.getElementById('delete-modal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.openPasswordModal = openPasswordModal;
+        window.openDeleteModal = openDeleteModal;
+        window.closeModal = closeModal;
+
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+
+            const type = input.type === 'password' ? 'text' : 'password';
+            input.type = type;
+
+            const toggleBtn = input.parentElement.querySelector('.toggle-password');
+            if (toggleBtn) {
+                const icon = toggleBtn.querySelector('i');
+                if (icon) {
+                    if (type === 'text') {
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    } else {
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                }
+            }
+        }
+
+         function isPasswordValid(password) {
+            return (
+                password.length >= 8 &&
+                /[A-Z]/.test(password) &&
+                /\d/.test(password)
+            );
+        }
+
+        window.togglePasswordVisibility = togglePasswordVisibility;
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        };
+    });
+    </script>
+
+    <footer class="footer gradient-background">
+        &copy; 2025 Apex Trading Platform. All Rights Reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Analysis Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .positive {
+            color: green;
+        }
+        .negative {
+            color: red;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Apex Trading</h1>
+        <h2>Portfolio Analysis Report</h2>
+        <p>Prepared for: {{ name }}</p>
+        <p>Date: {{ now().strftime('%B %d, %Y') }}</p>
+    </div>
+
+    <h2>Holdings Summary</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Avg Cost</th>
+                <th>Current Price</th>
+                <th>Market Value</th>
+                <th>Gain/Loss</th>
+                <th>% Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in holdings %}
+            <tr>
+                <td>{{ item.symbol }}</td>
+                <td>{{ item.shares }}</td>
+                <td>${{ "%.2f"|format(item.avg_cost) }}</td>
+                <td>${{ "%.2f"|format(item.current_price) }}</td>
+                <td>${{ "%.2f"|format(item.market_value) }}</td>
+                <td class="{{ 'positive' if item.gain_loss >= 0 else 'negative' }}">${{ "%.2f"|format(item.gain_loss) }}</td>
+                <td class="{{ 'positive' if item.percent_change >= 0 else 'negative' }}">{{ "%.2f"|format(item.percent_change) }}%</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Portfolio Allocation</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Market Value</th>
+                <th>Portfolio %</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set total_value = namespace(value=0) %}
+            {% for item in holdings %}
+                {% set total_value.value = total_value.value + item.market_value %}
+            {% endfor %}
+
+            {% for item in holdings %}
+            <tr>
+                <td>{{ item.symbol }}</td>
+                <td>${{ "%.2f"|format(item.market_value) }}</td>
+                <td>{{ "%.2f"|format((item.market_value / total_value.value) * 100) }}%</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <p>&copy; 2025 Apex Trading Platform. All Rights Reserved.</p>
+        <p>This report is for informational purposes only and does not constitute investment advice.</p>
+    </div>
+</body>
+</html>

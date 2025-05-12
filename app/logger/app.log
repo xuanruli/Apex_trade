@@ -1,135 +1,243 @@
-2025-04-14 22:48:00,994 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:48:54,916 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:50:13,750 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:50:15,310 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:50:28,644 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:50:44,886 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:51:06,386 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:51:07,685 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:51:08,670 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:51:14,034 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:51:27,989 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:56:41,002 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:56:43,143 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:57:18,498 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:57:41,699 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:57:52,052 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:58:11,811 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:58:20,827 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:58:30,227 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:58:40,802 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:58:56,606 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:59:20,738 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 22:59:42,114 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:00:03,905 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:00:05,268 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:00:26,718 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:00:40,393 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:00:51,780 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:01:27,779 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:01:58,041 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:02:51,543 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:03:07,712 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:19:42,634 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:20:18,469 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:21:19,427 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:26:04,327 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:26:20,363 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:26:33,975 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:26:48,746 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:28:16,179 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:28:31,011 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:34:07,616 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:37:33,576 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:38:15,351 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:38:44,188 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:39:08,227 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:39:45,270 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:43:45,588 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:44:09,181 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:47:18,217 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:48:51,356 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:49:35,281 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:49:48,107 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:51:16,067 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:51:31,636 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:52:37,166 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:52:52,785 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:53:05,106 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-14 23:53:22,679 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:02:43,816 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:03:24,906 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:03:33,134 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:06:58,021 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:07:06,732 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:07:58,965 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:10:50,447 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:11:20,315 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:11:46,116 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:13:28,866 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:14:07,949 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:51:37,591 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:52:00,857 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:52:42,842 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:53:21,228 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:53:37,157 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:53:50,852 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:54:15,170 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:55:01,092 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:55:40,397 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:55:51,014 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:56:08,241 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:56:14,943 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:58:34,285 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:59:00,583 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 00:59:48,649 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:12:00,225 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:12:10,786 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:12:51,231 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:12:58,617 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:13:25,401 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:13:38,872 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:13:53,419 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:15:29,583 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:15:31,070 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:19:42,624 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:22:06,813 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:22:19,108 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:27:30,404 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:28:48,827 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:29:05,174 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:29:16,210 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:29:29,560 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:29:40,172 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:36:07,092 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 01:39:56,357 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:03:07,163 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:03:20,772 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:08:48,229 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:10:23,360 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:11:27,198 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:14:19,364 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:20:26,075 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:20:45,432 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:40:50,216 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:41:13,406 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 02:44:10,711 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 03:06:18,579 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 03:07:21,355 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 03:13:00,912 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 03:13:13,879 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 03:18:24,773 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3323.5439428571426 + total P&L 405.24105714285724
-2025-04-15 03:22:27,355 - INFO - [TRANSACTION] - Inserted new transaction for user 9
-2025-04-15 03:22:27,357 - INFO - [PORTFOLIO] - user 9 sell 1 of AAPL with 224.24 and now user new holding cost for AAPL is 630.4775999999999 and 3.0 shares
-2025-04-15 03:22:27,377 - INFO - [PORTFOLIO] User 9's total value: 3504.55 with total shares 13.0 + total cost 3113.3847428571426 + total P&L 391.1602571428575
-2025-04-15 03:31:40,316 - INFO - [PORTFOLIO] User 9's total value: 3504.55 with total shares 13.0 + total cost 3113.3847428571426 + total P&L 391.1602571428575
-2025-04-15 03:31:51,174 - INFO - [TRANSACTION] - Inserted new transaction for user 9
-2025-04-15 03:31:51,178 - INFO - [PORTFOLIO] - user 9 buy 1 of AAPL with 224.24 and now user new holding cost for AAPL is 854.7176 and 4.0 shares
-2025-04-15 03:31:51,190 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
-2025-04-15 03:36:12,889 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
-2025-04-15 03:36:50,938 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
-2025-04-15 05:54:07,908 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
-2025-04-15 15:21:24,485 - INFO - [PORTFOLIO] User 9's total value: 3728.78 with total shares 14.0 + total cost 3337.6247428571423 + total P&L 391.1602571428575
-2025-04-15 15:21:52,796 - INFO - [TRANSACTION] - Inserted new transaction for user 9
-2025-04-15 15:21:52,799 - INFO - [PORTFOLIO] - user 9 buy 2 of AAPL with 224.24 and now user new holding cost for AAPL is 1303.1976 and 6.0 shares
-2025-04-15 15:21:52,814 - INFO - [PORTFOLIO] User 9's total value: 4177.27 with total shares 16.0 + total cost 3786.1047428571424 + total P&L 391.160257142858
+2025-04-28 22:59:15,232 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-28 23:15:29,048 - INFO - [AUTH] - verified user log in: test
+2025-04-28 23:15:29,184 - INFO - [PORTFOLIO] User 2's total value: 6744.85 with total shares 37.0 + total cost 6813.68826923077 + total P&L -68.83826923077049
+2025-04-28 23:18:58,675 - INFO - [AUTH] - verified user log in: test
+2025-04-28 23:18:58,768 - INFO - [PORTFOLIO] User 2's total value: 6744.85 with total shares 37.0 + total cost 6813.68826923077 + total P&L -68.83826923077049
+2025-04-28 23:21:57,503 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-29 02:18:47,632 - INFO - [AUTH] - verified user log in: test
+2025-04-29 02:18:47,721 - INFO - [PORTFOLIO] User 2's total value: 6744.85 with total shares 37.0 + total cost 6813.68826923077 + total P&L -68.83826923077049
+2025-04-29 02:23:40,766 - INFO - [PORTFOLIO] User 2's total value: 6744.85 with total shares 37.0 + total cost 6813.68826923077 + total P&L -68.83826923077049
+2025-04-29 02:24:17,375 - INFO - [PORTFOLIO] User 2's total value: 6744.85 with total shares 37.0 + total cost 6813.68826923077 + total P&L -68.83826923077049
+2025-04-29 02:26:03,883 - INFO - [PORTFOLIO] User 2's total value: 6744.85 with total shares 37.0 + total cost 6813.68826923077 + total P&L -68.83826923077049
+2025-04-29 02:26:23,064 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 02:26:23,106 - INFO - [PORTFOLIO] - user 2 sell 5 of NVDA with 99.3 and now user new holding cost for NVDA is 794.1476923076923 and 8.0 shares
+2025-04-29 02:26:23,197 - INFO - [PORTFOLIO] User 2's total value: 6248.35 with total shares 32.0 + total cost 6317.345961538463 + total P&L -68.99596153846323
+2025-04-29 02:43:02,435 - INFO - [PORTFOLIO] User 2's total value: 6248.35 with total shares 32.0 + total cost 6317.345961538463 + total P&L -68.99596153846323
+2025-04-29 02:43:24,380 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
+2025-04-29 02:47:14,585 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
+2025-04-29 02:49:48,194 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
+2025-04-29 02:50:13,335 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
+2025-04-29 03:06:13,246 - ERROR - [AUTH] - Error getting tokens: 400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token
+2025-04-29 03:12:30,946 - INFO - [USER] - new user xuanrul
+2025-04-29 03:12:30,985 - INFO - [DATABASE] - new user added xuanrul
+2025-04-29 03:12:31,014 - INFO - [AUTH] - Created new user: xuanrul
+2025-04-29 03:12:54,969 - INFO - [AUTH] - Existing user logged in: xuanrul@uci.edu
+2025-04-29 03:14:09,822 - INFO - [USER] - new user ryan29li33
+2025-04-29 03:14:09,842 - INFO - [DATABASE] - new user added ryan29li33
+2025-04-29 03:14:09,851 - INFO - [AUTH] - Created new user: ryan29li33
+2025-04-29 03:15:22,120 - INFO - [USER] - new user xuanruli
+2025-04-29 03:15:22,139 - INFO - [DATABASE] - new user added xuanruli
+2025-04-29 03:15:22,149 - INFO - [AUTH] - Created new user: xuanruli
+2025-04-29 03:17:50,970 - INFO - [AUTH] - Existing user logged in: xuanruli@seas.upenn.edu
+2025-04-29 03:18:14,808 - INFO - [AUTH] - Existing user logged in: ryan29li33@gmail.com
+2025-04-29 03:28:35,742 - INFO - [AUTH] - verified user log in: test
+2025-04-29 03:28:35,816 - INFO - [PORTFOLIO] User 2's total value: 6248.35 with total shares 32.0 + total cost 6317.345961538463 + total P&L -68.99596153846323
+2025-04-29 03:40:02,931 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-29 03:41:19,394 - INFO - [DATABASE] - user9 was deleted
+2025-04-29 03:42:09,557 - INFO - [DATABASE] - update password
+2025-04-29 03:43:16,320 - INFO - [USER] - new user ryan29li33
+2025-04-29 03:43:16,342 - INFO - [DATABASE] - new user added ryan29li33
+2025-04-29 03:43:16,353 - INFO - [AUTH] - Created new user: ryan29li33
+2025-04-29 03:48:42,996 - INFO - [AUTH] - Existing user logged in: ryan29li33@gmail.com
+2025-04-29 04:05:17,352 - INFO - [AUTH] - verified user log in: test
+2025-04-29 04:05:17,521 - INFO - [PORTFOLIO] User 2's total value: 6248.35 with total shares 32.0 + total cost 6317.345961538463 + total P&L -68.99596153846323
+2025-04-29 04:05:33,580 - INFO - [AUTH] - Existing user logged in: ryan29li33@gmail.com
+2025-04-29 04:06:16,248 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-29 04:06:21,913 - INFO - [DATABASE] - user11 was deleted
+2025-04-29 04:06:42,629 - INFO - [DATABASE] - update password
+2025-04-29 04:42:38,378 - INFO - [USER] - new user ryan29li33
+2025-04-29 04:42:38,745 - INFO - [DATABASE] - new user added ryan29li33
+2025-04-29 04:42:38,817 - INFO - [AUTH] - Created new user: ryan29li33
+2025-04-29 04:45:26,157 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-29 04:45:31,739 - INFO - [DATABASE] - user12 was deleted
+2025-04-29 04:45:41,766 - INFO - [USER] - new user ryan29li33
+2025-04-29 04:45:41,783 - INFO - [DATABASE] - new user added ryan29li33
+2025-04-29 04:45:41,794 - INFO - [AUTH] - Created new user: ryan29li33
+2025-04-29 04:49:03,856 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-29 04:49:08,565 - INFO - [DATABASE] - user13 was deleted
+2025-04-29 04:50:25,880 - INFO - [USER] - new user ryan29li33
+2025-04-29 04:50:25,915 - INFO - [DATABASE] - new user added ryan29li33
+2025-04-29 04:50:25,926 - INFO - [AUTH] - Created new user: ryan29li33
+2025-04-29 04:52:20,675 - INFO - [AUTH] - verified user logged in: ryan29li33@gmail.com
+2025-04-29 04:52:41,716 - INFO - [AUTH] - verified user logged in: ryan29li33@gmail.com
+2025-04-29 04:53:36,755 - INFO - [AUTH] - verified user logged in: ryan29li33@gmail.com
+2025-04-29 04:53:55,224 - INFO - [AUTH] - verified user logged in: ryan29li33@gmail.com
+2025-04-29 05:01:07,599 - INFO - [AUTH] - verified user logged in: ryan29li33@gmail.com
+2025-04-29 05:01:36,268 - INFO - [AUTH] - verified user logged in: ryan29li33@gmail.com
+2025-04-29 05:02:08,902 - INFO - [AUTH] - verified user log in: test
+2025-04-29 05:02:08,991 - INFO - [PORTFOLIO] User 2's total value: 6248.35 with total shares 32.0 + total cost 6317.345961538463 + total P&L -68.99596153846323
+2025-04-29 07:10:38,085 - INFO - [PORTFOLIO] User 2's total value: 6248.35 with total shares 32.0 + total cost 6317.345961538463 + total P&L -68.99596153846323
+2025-04-29 07:46:22,564 - INFO - [PORTFOLIO] User 2's total value: 6248.35 with total shares 32.0 + total cost 6317.345961538463 + total P&L -68.99596153846323
+2025-04-29 12:03:05,076 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:03:05,166 - INFO - [PORTFOLIO] - user 2 buy 10 of ANSS with 318.0 and this is the new holding cost
+2025-04-29 12:03:16,974 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:03:17,045 - INFO - [PORTFOLIO] - user 2 buy 10 of ZS with 219.86 and this is the new holding cost
+2025-04-29 12:03:31,122 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:03:31,163 - INFO - [PORTFOLIO] - user 2 buy 10 of BIIB with 119.12 and this is the new holding cost
+2025-04-29 12:03:53,420 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:03:53,460 - INFO - [PORTFOLIO] - user 2 buy 10 of LULU with 268.52 and this is the new holding cost
+2025-04-29 12:04:08,829 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:04:08,868 - INFO - [PORTFOLIO] - user 2 buy 10 of CDW with 158.59 and this is the new holding cost
+2025-04-29 12:04:11,163 - INFO - [PORTFOLIO] User 2's total value: 16406.35 with total shares 82.0 + total cost 17158.245961538465 + total P&L -751.8959615384665
+2025-04-29 12:09:48,225 - INFO - [PORTFOLIO] User 2's total value: 16406.35 with total shares 82.0 + total cost 17158.245961538465 + total P&L -751.8959615384665
+2025-04-29 12:10:05,442 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:10:05,602 - INFO - [PORTFOLIO] User 2's total value: 15707.08 with total shares 79.0 + total cost 16437.308461538458 + total P&L -730.2284615384579
+2025-04-29 12:10:07,870 - INFO - [PORTFOLIO] User 2's total value: 15707.08 with total shares 79.0 + total cost 16437.308461538458 + total P&L -730.2284615384579
+2025-04-29 12:10:51,199 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:10:51,237 - INFO - [PORTFOLIO] - user 2 buy 1 of APP with 284.98 and this is the new holding cost
+2025-04-29 12:11:23,508 - INFO - [PORTFOLIO] User 2's total value: 15940.17 with total shares 80.0 + total cost 16722.288461538465 + total P&L -782.1184615384645
+2025-04-29 12:17:18,604 - INFO - [AUTH] - verified user logged in: ryan29li33@gmail.com
+2025-04-29 12:18:10,832 - INFO - [AUTH] - verified user log in: test
+2025-04-29 12:18:10,987 - INFO - [PORTFOLIO] User 2's total value: 15940.17 with total shares 80.0 + total cost 16722.288461538465 + total P&L -782.1184615384645
+2025-04-29 12:20:32,200 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:20:32,247 - INFO - [PORTFOLIO] - user 2 buy 1 of AAPL with 210.14 and now user new holding cost for AAPL is 3542.8507692307694 and 18.0 shares
+2025-04-29 12:21:28,182 - INFO - [PORTFOLIO] User 2's total value: 16134.17 with total shares 81.0 + total cost 16932.428461538464 + total P&L -798.258461538464
+2025-04-29 12:22:22,577 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:22:22,620 - INFO - [PORTFOLIO] - user 2 sell 1 of ZS with 199.0 and now user new holding cost for ZS is 1978.7400000000002 and 9.0 shares
+2025-04-29 12:22:22,763 - INFO - [PORTFOLIO] User 2's total value: 15935.17 with total shares 80.0 + total cost 16712.568461538463 + total P&L -777.3984615384634
+2025-04-29 12:23:51,192 - INFO - [PORTFOLIO] User 2's total value: 15935.17 with total shares 80.0 + total cost 16712.568461538463 + total P&L -777.3984615384634
+2025-04-29 12:24:09,730 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-29 12:24:41,566 - INFO - [DATABASE] - user14 was deleted
+2025-04-29 12:25:14,426 - INFO - [DATABASE] - update password
+2025-04-29 12:38:23,661 - INFO - [AUTH] - verified user log in: test
+2025-04-29 12:38:23,927 - INFO - [PORTFOLIO] User 2's total value: 15935.17 with total shares 80.0 + total cost 16712.568461538463 + total P&L -777.3984615384634
+2025-04-29 12:44:24,348 - INFO - [PORTFOLIO] User 2's total value: 15935.17 with total shares 80.0 + total cost 16712.568461538463 + total P&L -777.3984615384634
+2025-04-29 12:44:31,490 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:44:31,656 - INFO - [PORTFOLIO] User 2's total value: 15702.08 with total shares 79.0 + total cost 16427.58846153846 + total P&L -725.5084615384603
+2025-04-29 12:45:06,249 - INFO - [PORTFOLIO] User 2's total value: 15702.08 with total shares 79.0 + total cost 16427.58846153846 + total P&L -725.5084615384603
+2025-04-29 12:45:09,883 - INFO - [PORTFOLIO] User 2's total value: 15702.08 with total shares 79.0 + total cost 16427.58846153846 + total P&L -725.5084615384603
+2025-04-29 12:45:29,433 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:45:29,582 - INFO - [PORTFOLIO] User 2's total value: 12210.08 with total shares 61.0 + total cost 12884.73769230769 + total P&L -674.65769230769
+2025-04-29 12:45:37,443 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:45:37,583 - INFO - [PORTFOLIO] User 2's total value: 10419.08 with total shares 52.0 + total cost 10905.99769230769 + total P&L -486.91769230769023
+2025-04-29 12:47:28,217 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:47:28,268 - INFO - [PORTFOLIO] - user 2 buy 10 of AAPL with 210.14 and this is the new holding cost
+2025-04-29 12:47:30,977 - INFO - [PORTFOLIO] User 2's total value: 12359.08 with total shares 62.0 + total cost 13007.397692307692 + total P&L -648.3176923076917
+2025-04-29 12:48:13,862 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:48:13,899 - INFO - [PORTFOLIO] - user 2 buy 1 of ARM with 112.08 and this is the new holding cost
+2025-04-29 12:48:17,123 - INFO - [PORTFOLIO] User 2's total value: 12459.02 with total shares 63.0 + total cost 13119.47769230769 + total P&L -660.4576923076893
+2025-04-29 12:56:19,603 - INFO - [PORTFOLIO] User 2's total value: 12459.02 with total shares 63.0 + total cost 13119.47769230769 + total P&L -660.4576923076893
+2025-04-29 12:56:26,388 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:56:26,557 - INFO - [PORTFOLIO] User 2's total value: 10519.02 with total shares 53.0 + total cost 11018.077692307692 + total P&L -499.05769230769147
+2025-04-29 12:56:34,906 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 12:56:35,057 - INFO - [PORTFOLIO] User 2's total value: 10419.08 with total shares 52.0 + total cost 10905.99769230769 + total P&L -486.91769230769023
+2025-04-29 13:01:46,374 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:01:46,405 - INFO - [PORTFOLIO] - user 2 buy 5 of ARM with 112.08 and this is the new holding cost
+2025-04-29 13:02:10,597 - INFO - [PORTFOLIO] User 2's total value: 10918.78 with total shares 57.0 + total cost 11466.397692307692 + total P&L -547.617692307691
+2025-04-29 13:02:17,320 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:02:17,456 - INFO - [PORTFOLIO] User 2's total value: 10419.08 with total shares 52.0 + total cost 10905.99769230769 + total P&L -486.91769230769023
+2025-04-29 13:03:05,275 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:03:05,311 - INFO - [PORTFOLIO] - user 2 buy 2 of TTWO with 225.55 and this is the new holding cost
+2025-04-29 13:03:15,395 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:03:15,514 - INFO - [PORTFOLIO] - user 2 buy 2 of XEL with 69.58 and this is the new holding cost
+2025-04-29 13:03:18,546 - INFO - [PORTFOLIO] User 2's total value: 10983.32 with total shares 56.0 + total cost 11496.25769230769 + total P&L -512.9376923076907
+2025-04-29 13:04:00,674 - INFO - [PORTFOLIO] User 2's total value: 10983.32 with total shares 56.0 + total cost 11496.25769230769 + total P&L -512.9376923076907
+2025-04-29 13:04:06,416 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:04:06,572 - INFO - [PORTFOLIO] User 2's total value: 8498.32 with total shares 46.0 + total cost 8811.057692307693 + total P&L -312.7376923076936
+2025-04-29 13:04:14,507 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:04:15,036 - INFO - [PORTFOLIO] User 2's total value: 6991.72 with total shares 36.0 + total cost 7225.157692307693 + total P&L -233.4376923076934
+2025-04-29 13:05:54,504 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:05:54,574 - INFO - [PORTFOLIO] - user 2 buy 5 of CCEP with 88.02 and this is the new holding cost
+2025-04-29 13:05:57,161 - INFO - [PORTFOLIO] User 2's total value: 7438.12 with total shares 41.0 + total cost 7665.257692307693 + total P&L -227.13769230769412
+2025-04-29 13:06:12,424 - INFO - [PORTFOLIO] User 2's total value: 7438.12 with total shares 41.0 + total cost 7665.257692307693 + total P&L -227.13769230769412
+2025-04-29 13:06:18,219 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:06:18,250 - INFO - [PORTFOLIO] - user 2 sell 5 of BIIB with 117.64 and now user new holding cost for BIIB is 595.6 and 5.0 shares
+2025-04-29 13:06:18,421 - INFO - [PORTFOLIO] User 2's total value: 6849.92 with total shares 36.0 + total cost 7069.657692307693 + total P&L -219.73769230769358
+2025-04-29 13:06:25,589 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:06:25,742 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:06:27,373 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:07:31,046 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:07:31,081 - INFO - [PORTFOLIO] - user 2 buy 5 of GEHC with 68.07 and this is the new holding cost
+2025-04-29 13:07:53,440 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:07:53,490 - INFO - [PORTFOLIO] - user 2 buy 5 of ODFL with 149.0 and this is the new holding cost
+2025-04-29 13:07:55,905 - INFO - [PORTFOLIO] User 2's total value: 7331.17 with total shares 41.0 + total cost 7559.407692307693 + total P&L -228.23769230769267
+2025-04-29 13:08:04,099 - INFO - [PORTFOLIO] User 2's total value: 7331.17 with total shares 41.0 + total cost 7559.407692307693 + total P&L -228.23769230769267
+2025-04-29 13:08:11,395 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:08:11,547 - INFO - [PORTFOLIO] User 2's total value: 7016.27 with total shares 36.0 + total cost 7219.057692307693 + total P&L -202.78769230769376
+2025-04-29 13:08:18,054 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:08:18,297 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:08:43,142 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:08:43,173 - INFO - [PORTFOLIO] - user 2 buy 1 of EA with 146.72 and this is the new holding cost
+2025-04-29 13:08:46,089 - INFO - [PORTFOLIO] User 2's total value: 6405.49 with total shares 32.0 + total cost 6620.777692307693 + total P&L -215.28769230769285
+2025-04-29 13:08:53,951 - INFO - [PORTFOLIO] User 2's total value: 6405.49 with total shares 32.0 + total cost 6620.777692307693 + total P&L -215.28769230769285
+2025-04-29 13:08:58,305 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:08:58,464 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:09:12,313 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:09:12,352 - INFO - [PORTFOLIO] - user 2 buy 1 of PYPL with 64.93 and this is the new holding cost
+2025-04-29 13:09:14,680 - INFO - [PORTFOLIO] User 2's total value: 6322.18 with total shares 32.0 + total cost 6538.987692307693 + total P&L -216.8076923076933
+2025-04-29 13:09:20,693 - INFO - [PORTFOLIO] User 2's total value: 6322.18 with total shares 32.0 + total cost 6538.987692307693 + total P&L -216.8076923076933
+2025-04-29 13:09:24,655 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:09:24,804 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:09:33,922 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:09:33,949 - INFO - [PORTFOLIO] - user 2 buy 1 of PDD with 103.09 and this is the new holding cost
+2025-04-29 13:09:36,602 - INFO - [PORTFOLIO] User 2's total value: 6355.94 with total shares 32.0 + total cost 6577.1476923076925 + total P&L -221.20769230769292
+2025-04-29 13:09:42,495 - INFO - [PORTFOLIO] User 2's total value: 6355.94 with total shares 32.0 + total cost 6577.1476923076925 + total P&L -221.20769230769292
+2025-04-29 13:09:46,535 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:09:46,690 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:09:48,054 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:10:11,682 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:10:11,708 - INFO - [PORTFOLIO] - user 2 buy 1 of AMD with 96.39 and this is the new holding cost
+2025-04-29 13:10:14,437 - INFO - [PORTFOLIO] User 2's total value: 6347.88 with total shares 32.0 + total cost 6570.447692307693 + total P&L -222.5676923076935
+2025-04-29 13:10:28,001 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:10:28,059 - INFO - [PORTFOLIO] - user 2 buy 1 of INTC with 20.51 and this is the new holding cost
+2025-04-29 13:10:30,196 - INFO - [PORTFOLIO] User 2's total value: 6366.66 with total shares 33.0 + total cost 6590.957692307693 + total P&L -224.29769230769307
+2025-04-29 13:10:58,069 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:10:58,204 - INFO - [PORTFOLIO] User 2's total value: 6280.50 with total shares 32.0 + total cost 6494.5676923076935 + total P&L -214.06769230769441
+2025-04-29 13:11:07,485 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 13:11:07,639 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:28:08,915 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:31:00,991 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:37:56,524 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 13:38:20,882 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 14:29:43,178 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 14:33:55,723 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 14:36:48,310 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 14:37:02,900 - INFO - [PORTFOLIO] User 2's total value: 6261.72 with total shares 31.0 + total cost 6474.057692307692 + total P&L -212.33769230769303
+2025-04-29 14:48:49,185 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 14:48:49,224 - INFO - [PORTFOLIO] - user 2 buy 1 of NVDA with 108.73 and now user new holding cost for NVDA is 902.8776923076923 and 9.0 shares
+2025-04-29 14:50:06,522 - INFO - [AUTH] - verified user log in: test
+2025-04-29 14:50:06,625 - INFO - [PORTFOLIO] User 2's total value: 6361.02 with total shares 32.0 + total cost 6582.787692307692 + total P&L -221.7676923076924
+2025-04-29 14:50:54,848 - INFO - [USER] - new user ryan29li33
+2025-04-29 14:50:54,872 - INFO - [DATABASE] - new user added ryan29li33
+2025-04-29 14:50:54,879 - INFO - [AUTH] - Created new user: ryan29li33
+2025-04-29 14:52:09,119 - INFO - [AUTH] - verified user log in: test
+2025-04-29 14:52:09,219 - INFO - [PORTFOLIO] User 2's total value: 6361.02 with total shares 32.0 + total cost 6582.787692307692 + total P&L -221.7676923076924
+2025-04-29 14:54:26,278 - INFO - [PORTFOLIO] User 2's total value: 6361.02 with total shares 32.0 + total cost 6582.787692307692 + total P&L -221.7676923076924
+2025-04-29 15:29:05,998 - INFO - [AUTH] - verified user logged in: ryan29li33@gmail.com
+2025-04-29 15:29:25,456 - INFO - [AUTH] - verified user log in: test
+2025-04-29 15:29:25,554 - INFO - [PORTFOLIO] User 2's total value: 6361.02 with total shares 32.0 + total cost 6582.787692307692 + total P&L -221.7676923076924
+2025-04-29 15:32:22,542 - INFO - [PORTFOLIO] User 2's total value: 6361.02 with total shares 32.0 + total cost 6582.787692307692 + total P&L -221.7676923076924
+2025-04-29 15:32:52,659 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 15:32:52,701 - INFO - [PORTFOLIO] - user 2 buy 1 of NVDA with 99.3 and now user new holding cost for NVDA is 1002.1776923076923 and 10.0 shares
+2025-04-29 15:32:52,802 - INFO - [PORTFOLIO] User 2's total value: 6460.32 with total shares 33.0 + total cost 6682.087692307692 + total P&L -221.7676923076924
+2025-04-29 15:34:34,012 - INFO - [PORTFOLIO] User 2's total value: 6460.32 with total shares 33.0 + total cost 6682.087692307692 + total P&L -221.7676923076924
+2025-04-29 15:35:04,066 - INFO - [PORTFOLIO] User 2's total value: 6460.32 with total shares 33.0 + total cost 6682.087692307692 + total P&L -221.7676923076924
+2025-04-29 15:35:50,948 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-29 15:36:11,781 - INFO - [DATABASE] - user15 was deleted
+2025-04-29 15:36:52,349 - INFO - [DATABASE] - update password
+2025-04-29 15:50:10,055 - INFO - [AUTH] - verified user log in: test
+2025-04-29 15:50:10,153 - INFO - [PORTFOLIO] User 2's total value: 6460.32 with total shares 33.0 + total cost 6682.087692307692 + total P&L -221.7676923076924
+2025-04-29 17:56:31,637 - INFO - [AUTH] - verified user log in: test
+2025-04-29 17:56:31,735 - INFO - [PORTFOLIO] User 2's total value: 6460.32 with total shares 33.0 + total cost 6682.087692307692 + total P&L -221.7676923076924
+2025-04-29 17:56:54,032 - INFO - [USER] - new user ryan29li33
+2025-04-29 17:56:54,067 - INFO - [DATABASE] - new user added ryan29li33
+2025-04-29 17:56:54,079 - INFO - [AUTH] - Created new user: ryan29li33
+2025-04-29 17:57:28,959 - INFO - [AUTH] - verified user log in: test
+2025-04-29 17:57:29,044 - INFO - [PORTFOLIO] User 2's total value: 6460.32 with total shares 33.0 + total cost 6682.087692307692 + total P&L -221.7676923076924
+2025-04-29 17:58:16,835 - INFO - [PORTFOLIO] User 2's total value: 6460.32 with total shares 33.0 + total cost 6682.087692307692 + total P&L -221.7676923076924
+2025-04-29 17:59:11,218 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 17:59:11,258 - INFO - [PORTFOLIO] - user 2 buy 1 of NVDA with 99.3 and now user new holding cost for NVDA is 1101.4776923076922 and 11.0 shares
+2025-04-29 17:59:11,362 - INFO - [PORTFOLIO] User 2's total value: 6559.62 with total shares 34.0 + total cost 6781.387692307692 + total P&L -221.7676923076924
+2025-04-29 18:00:59,419 - INFO - [AUTH] - verified user log in: apex_admin
+2025-04-29 18:01:21,493 - INFO - [DATABASE] - user16 was deleted
+2025-04-29 18:02:01,335 - INFO - [DATABASE] - update password
+2025-04-29 23:17:56,662 - INFO - [USER] - new user ryan29li33
+2025-04-29 23:17:56,693 - INFO - [DATABASE] - new user added ryan29li33
+2025-04-29 23:17:56,715 - INFO - [AUTH] - Created new user: ryan29li33
+2025-04-29 23:18:11,145 - INFO - [AUTH] - verified user log in: test
+2025-04-29 23:18:11,285 - INFO - [PORTFOLIO] User 2's total value: 6559.62 with total shares 34.0 + total cost 6781.387692307692 + total P&L -221.7676923076924
+2025-04-29 23:18:24,848 - INFO - [TRANSACTION] - Inserted new transaction for user 2
+2025-04-29 23:18:24,893 - INFO - [PORTFOLIO] - user 2 buy 1 of NVDA with 99.3 and now user new holding cost for NVDA is 1200.7776923076922 and 12.0 shares
+2025-04-29 23:18:25,022 - INFO - [PORTFOLIO] User 2's total value: 6658.92 with total shares 35.0 + total cost 6880.6876923076925 + total P&L -221.7676923076924
+2025-04-29 23:19:57,250 - INFO - [PORTFOLIO] User 2's total value: 6658.92 with total shares 35.0 + total cost 6880.6876923076925 + total P&L -221.7676923076924
+2025-04-29 23:21:32,439 - INFO - [PORTFOLIO] User 2's total value: 6658.92 with total shares 35.0 + total cost 6880.6876923076925 + total P&L -221.7676923076924

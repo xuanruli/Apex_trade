@@ -67,14 +67,6 @@ def google_login():
     # Get the authorization endpoint
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
 
-    # Build the request URL (J.O 4.4 fix)
-    #request_uri = f"{authorization_endpoint}?{urlencode({
-    #    'client_id': GOOGLE_CLIENT_ID,
-    #    'redirect_uri': f"{request.base_url}/callback",
-    #    'response_type': 'code',
-    #    'scope': "https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile"
-    #})}"
-    
     params = {
         'client_id': GOOGLE_CLIENT_ID,
         'redirect_uri': f'{request.base_url}/callback',
@@ -108,7 +100,7 @@ def google_callback():
             "code": code,
             "client_id": GOOGLE_CLIENT_ID,
             "client_secret": GOOGLE_CLIENT_SECRET,
-            "redirect_uri": f"{request.base_url.replace('/callback', '')}",
+            "redirect_uri": request.base_url,
             "grant_type": "authorization_code",
         },
     )
@@ -149,9 +141,10 @@ def google_callback():
 
         # Check if user exists
         existing_user = User.get_by_email(email)
+
         if existing_user:
             user_id = existing_user["id"]
-            logger.info(f"[AUTH] - Existing user logged in: {email}")
+            logger.info(f"[AUTH] - verified user logged in: {email}")
         else:
             # Create new user
             username = email.split("@")[0]
@@ -165,7 +158,10 @@ def google_callback():
             user_id = new_user["id"]
 
         # Set session
-        session["user_id"] = user_id
+        session['id'] = user_id
+        session['username'] = user_info["email"].split("@")[0]
+        session['name'] = user_info["name"]
+
         flash("Successfully logged in with Google", "success")
         return redirect(url_for("api.index"))
 
